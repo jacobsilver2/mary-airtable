@@ -1,8 +1,11 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Mary Choueiter`,
+    description: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +14,80 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: "keyyJIuMpYynthaOt",
+        concurrency: 10,
+        tables: [
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Home`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Beirut Exhibition Center`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Canadian Museum For Human Rights`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Contes Feriques`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Enlarged To Show Detail`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Klimop Benefitavaond`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Lef Corporate Identity`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Mathaf`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Melab Gallery`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Moody Gardens Aquarium`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Ocean Gazing Podcast Website`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Yuki Press Poster Pamphlet`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appYkA3RznpP4TcUq`,
+            tableName: `Villa Sehnaoui Inter Design Elements`,
+            mapping: { Attachments: `fileNode` },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,

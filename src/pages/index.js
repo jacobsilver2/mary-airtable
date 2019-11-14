@@ -1,21 +1,51 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import MainLayout from "../components/mainLayout"
+import GridItem from "../components/gridItem"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+export const pageQuery = graphql`
+  {
+    allAirtable(
+      filter: { table: { eq: "Home" } }
+      sort: { fields: data___order }
+    ) {
+      nodes {
+        data {
+          Name
+          url
+          order
+          passwordProtected
+          Attachments {
+            localFiles {
+              childImageSharp {
+                fluid(maxWidth: 1024) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        id
+      }
+    }
+  }
+`
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  const { nodes } = data.allAirtable
+  const tiles = nodes.map(node => {
+    return (
+      <GridItem
+        key={node.id}
+        isProtected={node.data.passwordProtected}
+        title={node.data.Name}
+        fluid={node.data.Attachments.localFiles[0].childImageSharp.fluid}
+        url={node.data.url}
+      />
+    )
+  })
+
+  return <MainLayout>{tiles}</MainLayout>
+}
 
 export default IndexPage

@@ -1,30 +1,35 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
+import Nav from "./Nav"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQueryNumberTwo {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+class workLayout extends React.Component {
+  state = {
+    isMobileNavFolded: true,
+  }
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-    </>
-  )
+  toggleMobileNav = () => {
+    this.setState(prevState => ({
+      isMobileNavFolded: !prevState.isMobileNavFolded,
+    }))
+  }
+
+  onRouteChange = () => {
+    this.setState({
+      isMobileNavFolded: true,
+    })
+  }
+  render() {
+    const { isMobileNavFolded } = this.state
+    return (
+      <>
+        <Nav
+          isMobileNavFolded={isMobileNavFolded}
+          onMobileNavToggle={this.toggleMobileNav}
+        />
+        <main>{this.props.children}</main>
+      </>
+    )
+  }
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default workLayout

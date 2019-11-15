@@ -1,31 +1,36 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import GridContainer from "../styles/GridContainer"
-import Header from "./header"
-// import "./layout.css"
+import Nav from "./Nav"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+class mainLayout extends React.Component {
+  state = {
+    isMobileNavFolded: true,
+  }
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <GridContainer>{children}</GridContainer>
-    </>
-  )
+  toggleMobileNav = () => {
+    this.setState(prevState => ({
+      isMobileNavFolded: !prevState.isMobileNavFolded,
+    }))
+  }
+
+  onRouteChange = () => {
+    this.setState({
+      isMobileNavFolded: true,
+    })
+  }
+
+  render() {
+    const { isMobileNavFolded } = this.state
+    return (
+      <>
+        <Nav
+          isMobileNavFolded={isMobileNavFolded}
+          onMobileNavToggle={this.toggleMobileNav}
+        />
+        <GridContainer>{this.props.children}</GridContainer>
+      </>
+    )
+  }
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default mainLayout

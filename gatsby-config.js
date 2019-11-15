@@ -24,7 +24,7 @@ module.exports = {
         tables: [
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Home`,
+            tableName: `WorkHome`,
             mapping: { Attachments: `fileNode` },
           },
           {
@@ -85,6 +85,51 @@ module.exports = {
           {
             baseId: `appYkA3RznpP4TcUq`,
             tableName: `Villa Sehnaoui Inter Design Elements`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `SideNotesHome`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `World Population Day Social Media Post`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `Stories Under The Stars`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `Bubbles, A Little Thank You`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `Holiday Cards 2013-2015`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `Ghinwa and Ari Wedding Invite`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `Wind Writings`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `Writing Meander`,
+            mapping: { Attachments: `fileNode` },
+          },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `City Debates Publication`,
             mapping: { Attachments: `fileNode` },
           },
         ],

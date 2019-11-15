@@ -6,7 +6,7 @@ import { renderWorkHtml } from "../../utility/renderHtml"
 export const pageQuery = graphql`
   {
     allAirtable(
-      filter: { table: { eq: "World Population Day Social Media Post" } }
+      filter: { table: { eq: "Holiday Cards 2013-2015" } }
       sort: { fields: data___Order }
     ) {
       nodes {

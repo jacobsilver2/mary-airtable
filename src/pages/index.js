@@ -6,7 +6,7 @@ import GridItem from "../components/gridItem"
 export const pageQuery = graphql`
   {
     allAirtable(
-      filter: { table: { eq: "Home" } }
+      filter: { table: { eq: "WorkHome" } }
       sort: { fields: data___order }
     ) {
       nodes {

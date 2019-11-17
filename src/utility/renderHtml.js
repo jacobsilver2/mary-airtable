@@ -1,7 +1,14 @@
 import React from "react"
 import Img from "gatsby-image"
-import StyledVideoContainer from "../styles/StyledVideoContainer"
-import StyledImageText from "../styles/StyledImageText"
+import Iframe from "react-iframe"
+import {
+  StyledH1,
+  StyledH2,
+  StyledP,
+  StyledImage,
+  StyledImageText,
+  StyledVideoContainer,
+} from "../styles/StyledHtml"
 
 export const renderWorkHtml = node => {
   const { id, data } = node
@@ -14,31 +21,40 @@ export const renderWorkHtml = node => {
         />
       )
     case "h1":
-      return <h1 key={id}>{data.Text}</h1>
+      return <StyledH1 key={id}>{data.Text}</StyledH1>
     case "h2":
-      return <h2 key={id}>{data.Text}</h2>
+      return <StyledH2 key={id}>{data.Text}</StyledH2>
     case "Paragraph":
       const paragraph = data.Link ? (
         <a key={id} href={data.Link}>
-          <p>{data.Text}</p>
+          <StyledP>{data.Text}</StyledP>
         </a>
       ) : (
-        <p key={id}>{data.Text}</p>
+        <StyledP key={id}>{data.Text}</StyledP>
       )
       return paragraph
     case "Image":
       return (
-        <div key={id}>
-          <Img fluid={data.Attachments.localFiles[0].childImageSharp.fluid} />
+        <div key={id} style={{ marginBottom: "2rem" }}>
+          <StyledImage
+            fluid={data.Attachments.localFiles[0].childImageSharp.fluid}
+          />
           {data.Text && <StyledImageText>{data.Text}</StyledImageText>}
         </div>
       )
     case "gif":
-      return <img key={id} src={data.Attachments.localFiles[0].publicURL} />
+      return (
+        <img key={id} src={data.Attachments.localFiles[0].publicURL} alt="" />
+      )
     case "Video":
       return (
         <StyledVideoContainer key={id}>
-          <iframe title={data.Name} src={data.Link} width="853" height="480" />
+          <Iframe
+            title={data.Name}
+            url={data.Link}
+            width="100%"
+            height="100%"
+          />
         </StyledVideoContainer>
       )
     default:

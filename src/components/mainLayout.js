@@ -1,6 +1,20 @@
 import React from "react"
 import GridContainer from "../styles/GridContainer"
 import Nav from "./Nav"
+import { createGlobalStyle } from "styled-components"
+import "typeface-rubik"
+import rem from "../utility/rem"
+
+const GlobalStyle = createGlobalStyle`
+  h1 {
+
+  }
+  body {
+    margin: 0;
+    font-family: "Rubik";
+    letter-spacing: ${rem(0.25)};
+  }
+`
 
 class mainLayout extends React.Component {
   state = {
@@ -23,6 +37,7 @@ class mainLayout extends React.Component {
     const { isMobileNavFolded } = this.state
     return (
       <>
+        <GlobalStyle />
         <Nav
           isMobileNavFolded={isMobileNavFolded}
           onMobileNavToggle={this.toggleMobileNav}

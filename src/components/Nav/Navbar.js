@@ -10,7 +10,7 @@ import {
 import NavLinks from "./NavLinks"
 import MobileNavbar from "./MobileNavbar"
 
-const NavBar = ({ onMobileNavToggle, isMobileNavFolded }) => {
+const NavBar = () => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,19 +25,13 @@ const NavBar = ({ onMobileNavToggle, isMobileNavFolded }) => {
     <Wrapper>
       <NormalNavBar>
         <StartWrapper>
-          <LogoLink>
-            <h1>{data.site.siteMetadata.title}</h1>
-          </LogoLink>
+          <LogoLink>{data.site.siteMetadata.title}</LogoLink>
         </StartWrapper>
         <EndWrapper>
           <NavLinks />
         </EndWrapper>
       </NormalNavBar>
-
-      <MobileNavbar
-        isMobileNavFolded={isMobileNavFolded}
-        onMobileNavToggle={onMobileNavToggle}
-      />
+      <MobileNavbar />
     </Wrapper>
   )
 }

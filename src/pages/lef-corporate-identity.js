@@ -35,8 +35,11 @@ export const pageQuery = graphql`
 
 const LefPage = ({ data }) => {
   const { nodes } = data.allAirtable
-  const myhtml = nodes.map(node => renderWorkHtml(node))
-  return <Layout>{myhtml}</Layout>
+  const hero = nodes.filter(node => node.data.Type === "Hero")[0]
+  const myhtml = nodes
+    .filter(node => node.data.Type !== "Hero")
+    .map(node => renderWorkHtml(node))
+  return <Layout hero={hero}>{myhtml}</Layout>
 }
 
 export default LefPage

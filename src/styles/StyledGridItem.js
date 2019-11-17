@@ -31,9 +31,9 @@ export const StyledTitle = styled.div`
 `
 
 export const StyledTitleText = styled.div`
-  font-size: 30px;
+  /* font-size: 30px; */
   position: relative;
-  font-family: fertigo-pro, serif;
+  /* font-family: fertigo-pro, serif; */
   font-style: normal;
   font-weight: 400;
 `

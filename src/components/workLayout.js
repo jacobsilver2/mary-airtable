@@ -1,35 +1,30 @@
 import React from "react"
 import Nav from "./Nav"
-import "./layout.css"
+import Img from "gatsby-image"
+import { StyledImageText } from "../styles/StyledHtml"
+import Footer from "../components/footer"
 
-class workLayout extends React.Component {
-  state = {
-    isMobileNavFolded: true,
-  }
-
-  toggleMobileNav = () => {
-    this.setState(prevState => ({
-      isMobileNavFolded: !prevState.isMobileNavFolded,
-    }))
-  }
-
-  onRouteChange = () => {
-    this.setState({
-      isMobileNavFolded: true,
-    })
-  }
-  render() {
-    const { isMobileNavFolded } = this.state
-    return (
-      <>
-        <Nav
-          isMobileNavFolded={isMobileNavFolded}
-          onMobileNavToggle={this.toggleMobileNav}
-        />
-        <main>{this.props.children}</main>
-      </>
-    )
-  }
+const WorkLayout = ({ hero, children }) => {
+  return (
+    <>
+      <Nav />
+      {hero && (
+        <>
+          <Img
+            fluid={hero.data.Attachments.localFiles[0].childImageSharp.fluid}
+            style={{ marginLeft: "1rem", marginRight: "1rem" }}
+          />
+          {hero.data.Text && (
+            <StyledImageText>{hero.data.Text}</StyledImageText>
+          )}
+        </>
+      )}
+      <main style={{ marginLeft: "2rem", marginRight: "2rem" }}>
+        {children}
+      </main>
+      <Footer />
+    </>
+  )
 }
 
-export default workLayout
+export default WorkLayout

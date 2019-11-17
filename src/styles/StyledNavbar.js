@@ -11,8 +11,8 @@ export const Wrapper = styled.div`
   z-index: 3;
   width: 100%;
   height: ${rem(navbarHeight)};
-  font-size: ${rem(15)};
-  font-weight: 500;
+  /* font-size: ${rem(15)}; */
+  /* font-weight: 500; */
   background: white;
   transition: background 300ms ease-out;
   color: black;
@@ -50,6 +50,8 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
+  font-weight: 500;
+  font-size: 2rem;
   display: inline-block;
   vertical-align: center;
   margin-right: ${rem(35)};

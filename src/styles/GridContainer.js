@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { navbarHeight } from "../utility/sizes"
 
 const GridContainer = styled.div`
   display: grid;

@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: "keyyJIuMpYynthaOt",
+        apiKey: process.env.GATSBY_AIRTABLE_API,
         concurrency: 10,
         tables: [
           {

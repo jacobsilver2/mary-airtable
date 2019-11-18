@@ -8,6 +8,7 @@ import {
   StyledImage,
   StyledImageText,
   StyledVideoContainer,
+  StyledSmallImage,
 } from "../styles/StyledHtml"
 
 export const renderWorkHtml = node => {
@@ -37,6 +38,15 @@ export const renderWorkHtml = node => {
       return (
         <div key={id} style={{ marginBottom: "2rem" }}>
           <StyledImage
+            fluid={data.Attachments.localFiles[0].childImageSharp.fluid}
+          />
+          {data.Text && <StyledImageText>{data.Text}</StyledImageText>}
+        </div>
+      )
+    case "Small-Image":
+      return (
+        <div key={id} style={{ marginBottom: "2rem", textAlign: "center" }}>
+          <StyledSmallImage
             fluid={data.Attachments.localFiles[0].childImageSharp.fluid}
           />
           {data.Text && <StyledImageText>{data.Text}</StyledImageText>}

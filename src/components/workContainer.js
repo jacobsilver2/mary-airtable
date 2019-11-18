@@ -1,13 +1,11 @@
-import React from "react"
-import Nav from "./Nav"
 import Img from "gatsby-image"
+import React from "react"
 import { StyledImageText } from "../styles/StyledHtml"
-import Footer from "../components/footer"
+import Footer from "./footer"
 
-const WorkLayout = ({ hero, children }) => {
+const WorkContainer = ({ hero, children }) => {
   return (
     <>
-      <Nav />
       {hero && (
         <>
           <Img
@@ -27,4 +25,4 @@ const WorkLayout = ({ hero, children }) => {
   )
 }
 
-export default WorkLayout
+export default WorkContainer

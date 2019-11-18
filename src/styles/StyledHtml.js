@@ -25,6 +25,14 @@ export const StyledImage = styled(Img)`
   /* margin-bottom: 2rem; */
 `
 
+export const StyledSmallImage = styled(Img)`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40%;
+  min-width: 30%;
+`
+
 export const StyledVideoContainer = styled.div`
   position: relative;
   text-align: center;

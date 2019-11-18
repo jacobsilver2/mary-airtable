@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/workLayout"
+import Layout from "../components/layout"
+import WorkContainer from "../components/workContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
 export const pageQuery = graphql`
@@ -39,7 +40,11 @@ const MelabPage = ({ data }) => {
   const myhtml = nodes
     .filter(node => node.data.Type !== "Hero")
     .map(node => renderWorkHtml(node))
-  return <Layout hero={hero}>{myhtml}</Layout>
+  return (
+    <Layout>
+      <WorkContainer hero={hero}>{myhtml}</WorkContainer>
+    </Layout>
+  )
 }
 
 export default MelabPage

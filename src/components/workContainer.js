@@ -8,12 +8,25 @@ const WorkContainer = ({ hero, children }) => {
     <>
       {hero && (
         <>
-          <Img
-            fluid={hero.data.Attachments.localFiles[0].childImageSharp.fluid}
-            style={{ marginLeft: "1rem", marginRight: "1rem" }}
-          />
-          {hero.data.Text && (
-            <StyledImageText>{hero.data.Text}</StyledImageText>
+          {hero.data ? (
+            <Img
+              fluid={hero.data.Attachments.localFiles[0].childImageSharp.fluid}
+              style={{ marginLeft: "1rem", marginRight: "1rem" }}
+            />
+          ) : (
+            <img
+              src={hero.fields.Attachments[0].url}
+              style={{ marginLeft: "1rem", marginRight: "1rem" }}
+            />
+          )}
+          {hero.data ? (
+            <StyledImageText>
+              {hero.data.Text && hero.data.Text}
+            </StyledImageText>
+          ) : (
+            <StyledImageText>
+              {hero.fields.Text && hero.fields.Text}
+            </StyledImageText>
           )}
         </>
       )}

@@ -1,8 +1,8 @@
+import { graphql, Link } from "gatsby"
 import React from "react"
-import { graphql } from "gatsby"
 import GridItem from "../components/gridItem"
-import GridContainer from "../styles/GridContainer"
 import Layout from "../components/layout"
+import GridContainer from "../styles/GridContainer"
 
 export const pageQuery = graphql`
   {
@@ -36,22 +36,25 @@ const IndexPage = ({ data }) => {
   const { nodes } = data.allAirtable
   const tiles = nodes.map(node => {
     return (
-      <>
-        <GridItem
-          key={node.id}
-          isProtected={node.data.passwordProtected}
-          title={node.data.Name}
-          fluid={node.data.Attachments.localFiles[0].childImageSharp.fluid}
-          url={node.data.url}
-        />
-      </>
+      <GridItem
+        key={node.id}
+        isProtected={node.data.passwordProtected}
+        title={node.data.Name}
+        fluid={node.data.Attachments.localFiles[0].childImageSharp.fluid}
+        url={node.data.url}
+      />
     )
   })
 
   return (
-    <Layout>
-      <GridContainer>{tiles}</GridContainer>
-    </Layout>
+    <>
+      <Layout>
+        {/* <Link to="/cmhr/">CMHR</Link>
+        <Link to="/melab/">Melab</Link>
+        <Link to="/moody/">Moody</Link> */}
+        <GridContainer>{tiles}</GridContainer>
+      </Layout>
+    </>
   )
 }
 

@@ -8,6 +8,12 @@ module.exports = {
     description: ``,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: {
+        prefixes: [`/cmhr/*`, `/melab/*`, `/moody/*`],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

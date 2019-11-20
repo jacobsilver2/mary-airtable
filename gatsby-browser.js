@@ -1,6 +1,41 @@
 import React from "react"
 import NavStore from "./src/components/Nav/NavContext"
+import UrlStore from "./src/contexts/urlContext"
+import { silentAuth } from "./src/utility/auth"
+
+class SessionCheck extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: true,
+    }
+  }
+
+  handleCheckSession = () => {
+    this.setState({ loading: false })
+  }
+
+  componentDidMount() {
+    silentAuth(this.handleCheckSession)
+  }
+
+  render() {
+    return (
+      this.state.loading === false && (
+        <React.Fragment>{this.props.children}</React.Fragment>
+      )
+    )
+  }
+}
 
 export const wrapRootElement = ({ element }) => {
-  return <NavStore>{element}</NavStore>
+  return (
+    <>
+      <UrlStore>
+        <NavStore>
+          <SessionCheck> {element}</SessionCheck>
+        </NavStore>
+      </UrlStore>
+    </>
+  )
 }

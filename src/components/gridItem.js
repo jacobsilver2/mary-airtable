@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { CTX } from "../contexts/urlContext"
 import { spring, Motion } from "react-motion"
 import {
   StyledContainer,
@@ -14,6 +15,7 @@ import {
 
 const GridItem = ({ fluid, title, url, isProtected }) => {
   const [isHovering, setIsHovering] = useState(false)
+  const [currentLinkState, setCurrentLinkState] = useContext(CTX)
   const getSpringProps = () => {
     return {
       defaultStyle: {
@@ -43,7 +45,10 @@ const GridItem = ({ fluid, title, url, isProtected }) => {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <Link to={url}>
+            <Link
+              to={url}
+              onClick={() => setCurrentLinkState({ currentUrl: url })}
+            >
               <StyledContainer>
                 <StyledSubContainer>
                   <StyledContainerImage>

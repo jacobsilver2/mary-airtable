@@ -13,7 +13,9 @@ import {
   StyledPasswordText,
 } from "../styles/StyledGridItem"
 
-const GridItem = ({ fluid, title, url, isProtected }) => {
+const GridItem = props => {
+  const { fluid, title, url, isProtected } = props
+  console.log(props)
   const [isHovering, setIsHovering] = useState(false)
   const [currentLinkState, setCurrentLinkState] = useContext(CTX)
   const getSpringProps = () => {
@@ -45,30 +47,33 @@ const GridItem = ({ fluid, title, url, isProtected }) => {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <Link
+            {/* <Link
               to={url}
-              onClick={() => setCurrentLinkState({ currentUrl: url })}
-            >
-              <StyledContainer>
-                <StyledSubContainer>
-                  <StyledContainerImage>
-                    <Img fluid={fluid} style={styleImage} alt={title} />
-                  </StyledContainerImage>
-                  <StyledOverlay>
-                    <StyledTitle style={styleTitle}>
-                      <StyledTitleText>
-                        <p dangerouslySetInnerHTML={{ __html: title }} />
-                        {isProtected && (
-                          <StyledPasswordText>
-                            password protected
-                          </StyledPasswordText>
-                        )}
-                      </StyledTitleText>
-                    </StyledTitle>
-                  </StyledOverlay>
-                </StyledSubContainer>
-              </StyledContainer>
-            </Link>
+              onClick={() => {
+                console.log(props)
+                setCurrentLinkState({ currentUrl: url })
+              }}
+            > */}
+            <StyledContainer>
+              <StyledSubContainer>
+                <StyledContainerImage>
+                  <Img fluid={fluid} style={styleImage} alt={title} />
+                </StyledContainerImage>
+                <StyledOverlay>
+                  <StyledTitle style={styleTitle}>
+                    <StyledTitleText>
+                      <p dangerouslySetInnerHTML={{ __html: title }} />
+                      {isProtected && (
+                        <StyledPasswordText>
+                          password protected
+                        </StyledPasswordText>
+                      )}
+                    </StyledTitleText>
+                  </StyledTitle>
+                </StyledOverlay>
+              </StyledSubContainer>
+            </StyledContainer>
+            {/* </Link> */}
           </div>
         )
       }}

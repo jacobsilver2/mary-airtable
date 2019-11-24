@@ -2,14 +2,14 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import WorkContainer from "../../components/workContainer"
-import { moody } from "../../utility/airtableUrls"
+import { melab } from "../../utility/airtableUrls"
 import { isAuthenticated, login } from "../../utility/auth"
 import { renderWorkHtml } from "../../utility/renderHtml"
 
-const MoodyGardensPage = () => {
+const MelabPage = props => {
   const [nodes, setNodes] = useState([])
   useEffect(() => {
-    axios.get(moody).then(response => {
+    axios.get(melab).then(response => {
       setNodes(response.data.records)
     })
   }, [])
@@ -18,6 +18,7 @@ const MoodyGardensPage = () => {
     login()
     return <p>Redirecting to login...</p>
   }
+
   const hero = nodes.filter(node => node.fields.Type === "Hero")[0]
   const myhtml = nodes
     .filter(node => node.fields.Type !== "Hero")
@@ -29,4 +30,4 @@ const MoodyGardensPage = () => {
   )
 }
 
-export default MoodyGardensPage
+export default MelabPage

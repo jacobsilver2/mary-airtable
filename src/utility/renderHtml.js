@@ -45,7 +45,7 @@ export const renderWorkHtml = node => {
               fluid={Node.Attachments.localFiles[0].childImageSharp.fluid}
             />
           ) : (
-            <img src={Node.Attachments[0].url} />
+            <img src={Node.Attachments[0].url} alt="" />
           )}
           {Node.Text && <StyledImageText>{Node.Text}</StyledImageText>}
         </div>
@@ -58,7 +58,7 @@ export const renderWorkHtml = node => {
               fluid={Node.Attachments.localFiles[0].childImageSharp.fluid}
             />
           ) : (
-            <img src={Node.Attachments[0].url} />
+            <img src={Node.Attachments[0].url} alt="" />
           )}
           {Node.Text && <StyledImageText>{Node.Text}</StyledImageText>}
         </div>

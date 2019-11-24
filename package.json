@@ -34,7 +34,8 @@
     "styled-components": "^4.4.1",
     "typeface-rubik": "0.0.72",
     "typography": "^0.16.19",
-    "typography-theme-funston": "^0.16.19"
+    "typography-theme-funston": "^0.16.19",
+    "use-session-storage": "^1.0.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

@@ -17,6 +17,7 @@ const WorkContainer = ({ hero, children }) => {
             <img
               src={hero.fields.Attachments[0].url}
               style={{ marginLeft: "1rem", marginRight: "1rem" }}
+              alt=""
             />
           )}
           {hero.data ? (

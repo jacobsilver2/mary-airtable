@@ -1,13 +1,33 @@
 import React from "react"
+import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import WorkContainer from "../components/workContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
+const ProjectTemplate = props => {
+  const { nodes } = props.data.allAirtable
+  const hero = nodes.filter(node => node.data.Type === "Hero")[0]
+  const title = nodes.filter(node => node.data.Type === "h1")[0].Text
+  const myhtml = nodes
+    .filter(node => node.data.Type !== "Hero")
+    .map(node => renderWorkHtml(node))
+  return (
+    <>
+      <Layout>
+        <Helmet title={title} />
+        <WorkContainer hero={hero}>{myhtml}</WorkContainer>
+      </Layout>
+    </>
+  )
+}
+
+export default ProjectTemplate
+
 export const pageQuery = graphql`
-  {
+  query($name: String!) {
     allAirtable(
-      filter: { table: { eq: "Enlarged To Show Detail" } }
+      filter: { table: { eq: $name } }
       sort: { fields: data___Order }
     ) {
       nodes {
@@ -33,18 +53,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const EnlargedToShowDetailPage = ({ data }) => {
-  const { nodes } = data.allAirtable
-  const hero = nodes.filter(node => node.data.Type === "Hero")[0]
-  const myhtml = nodes
-    .filter(node => node.data.Type !== "Hero")
-    .map(node => renderWorkHtml(node))
-  return (
-    <Layout>
-      <WorkContainer hero={hero}>{myhtml}</WorkContainer>
-    </Layout>
-  )
-}
-
-export default EnlargedToShowDetailPage

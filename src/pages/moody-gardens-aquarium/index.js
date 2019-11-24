@@ -2,22 +2,23 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import WorkContainer from "../../components/workContainer"
-import { cmhr } from "../../utility/airtableUrls"
+import { moody } from "../../utility/airtableUrls"
 import { isAuthenticated, login } from "../../utility/auth"
 import { renderWorkHtml } from "../../utility/renderHtml"
 
-const CMHRPage = () => {
+const MoodyGardensPage = props => {
+  console.log(props)
   const [nodes, setNodes] = useState([])
   useEffect(() => {
-    axios.get(cmhr).then(response => {
+    axios.get(moody).then(response => {
       setNodes(response.data.records)
     })
   }, [])
+
   if (!isAuthenticated()) {
     login()
     return <p>Redirecting to login...</p>
   }
-
   const hero = nodes.filter(node => node.fields.Type === "Hero")[0]
   const myhtml = nodes
     .filter(node => node.fields.Type !== "Hero")
@@ -29,4 +30,4 @@ const CMHRPage = () => {
   )
 }
 
-export default CMHRPage
+export default MoodyGardensPage

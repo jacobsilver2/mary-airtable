@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import GridItem from "../../components/gridItem"
 import GridContainer from "../../styles/GridContainer"
@@ -13,7 +13,6 @@ export const pageQuery = graphql`
       nodes {
         data {
           Name
-          url
           Order
           passwordProtected
           Attachments {
@@ -36,13 +35,14 @@ const IndexPage = ({ data }) => {
   const { nodes } = data.allAirtable
   const tiles = nodes.map(node => {
     return (
-      <GridItem
-        key={node.id}
-        isProtected={node.data.passwordProtected}
-        title={node.data.Name}
-        fluid={node.data.Attachments.localFiles[0].childImageSharp.fluid}
-        url={node.data.url}
-      />
+      <Link key={node.id} to={`/side-notes/${node.data.Name}`}>
+        <GridItem
+          isProtected={node.data.passwordProtected}
+          title={node.data.Name}
+          fluid={node.data.Attachments.localFiles[0].childImageSharp.fluid}
+          url={`/${node.data.Title}`}
+        />
+      </Link>
     )
   })
 

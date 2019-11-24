@@ -1,11 +1,8 @@
-import React, { useContext } from "react"
-import { CTX } from "../contexts/urlContext"
+import React from "react"
 import { handleAuthentication } from "../utility/auth"
 
 const Callback = () => {
-  const [currentLinkState, setCurrentLinkState] = useContext(CTX)
-  console.log(currentLinkState)
-  handleAuthentication(currentLinkState)
+  handleAuthentication()
 
   return <p>Loading...</p>
 }

@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react"
 import axios from "axios"
+import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import WorkContainer from "../../components/workContainer"
+import { cmhr } from "../../utility/airtableUrls"
+import { isAuthenticated, login } from "../../utility/auth"
 import { renderWorkHtml } from "../../utility/renderHtml"
-import { login, isAuthenticated } from "../../utility/auth"
-import { melab } from "../../utility/airtableUrls"
 
-const MelabPage = () => {
+const CMHRPage = props => {
   const [nodes, setNodes] = useState([])
   useEffect(() => {
-    axios.get(melab).then(response => {
+    axios.get(cmhr).then(response => {
       setNodes(response.data.records)
     })
   }, [])
-
   if (!isAuthenticated()) {
     login()
     return <p>Redirecting to login...</p>
@@ -30,4 +29,4 @@ const MelabPage = () => {
   )
 }
 
-export default MelabPage
+export default CMHRPage

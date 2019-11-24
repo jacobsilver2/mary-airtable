@@ -8,10 +8,15 @@ module.exports = {
     description: ``,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-create-client-paths`,
       options: {
-        prefixes: [`/cmhr/*`, `/melab/*`, `/moody/*`],
+        prefixes: [
+          `/canadian-museum-for-human-rights/*`,
+          `/melab-gallery-in-the-phillip-and-patricia-frost-museum/*`,
+          `/moody-gardens-aquarium/*`,
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -35,64 +40,65 @@ module.exports = {
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Beirut Exhibition Center`,
+            tableName: `beirut-exhibition-center`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Canadian Museum For Human Rights`,
+            tableName: `moody-gardens-aquarium`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Contes Feriques`,
+            tableName: `melab-gallery-in-the-phillip-and-patricia-frost-museum`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Enlarged To Show Detail`,
+            tableName: `canadian-museum-for-human-rights`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Klimop Benefitavaond`,
+            tableName: `villa-sehnaoui-interior-design-elements`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Lef Corporate Identity`,
+            tableName: `ocean-gazing-podcast-website`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Mathaf`,
+            tableName: `mathaf-museum-of-modern-arab-art`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Melab Gallery`,
+            tableName: `lef-corporate-identity`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Moody Gardens Aquarium`,
+            tableName: `klimop-benefietavond`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Ocean Gazing Podcast Website`,
+            tableName: `yuki-press-poster-pamphlet`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Yuki Press Poster Pamphlet`,
+            tableName: `enlarged-to-show-detail`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `Villa Sehnaoui Inter Design Elements`,
+            tableName: `contes-féeriques`,
             mapping: { Attachments: `fileNode` },
           },
+
           {
             baseId: `appGvNaH7D0N8pqLR`,
             tableName: `SideNotesHome`,
@@ -100,48 +106,47 @@ module.exports = {
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `World Population Day Social Media Post`,
+            tableName: `world-population-day-social-media-post`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `Stories Under The Stars`,
+            tableName: `stories-under-the-stars`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `Bubbles, A Little Thank You`,
+            tableName: `bubbles-a-little-thank-you`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `Holiday Cards 2013-2015`,
+            tableName: `holiday-cards-2013-2015`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `Ghinwa and Ari Wedding Invite`,
+            tableName: `ghinwa-and-ari-wedding-invite`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `Wind Writings`,
+            tableName: `wind-writings`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `Writing Meander`,
+            tableName: `writing-meander`,
             mapping: { Attachments: `fileNode` },
           },
           {
             baseId: `appGvNaH7D0N8pqLR`,
-            tableName: `City Debates Publication`,
+            tableName: `city-debates-publication`,
             mapping: { Attachments: `fileNode` },
           },
         ],
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

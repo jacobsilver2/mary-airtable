@@ -1,6 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+console.log(__dirname)
 
 module.exports = {
   siteMetadata: {
@@ -20,6 +21,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts/`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -12,6 +12,7 @@ const ProjectTemplate = props => {
   const myhtml = nodes
     .filter(node => node.data.Type !== "Hero")
     .map(node => renderWorkHtml(node))
+
   return (
     <>
       <Layout>

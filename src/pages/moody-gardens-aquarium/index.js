@@ -7,7 +7,6 @@ import { isAuthenticated, login } from "../../utility/auth"
 import { renderWorkHtml } from "../../utility/renderHtml"
 
 const MoodyGardensPage = props => {
-  console.log(props)
   const [nodes, setNodes] = useState([])
   useEffect(() => {
     axios.get(moody).then(response => {

@@ -1,25 +1,78 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 
+export const TextWrapper = styled.div`
+  /* display: grid;
+  grid-template-columns: 1fr 3fr 1fr; */
+  /* margin-left: 20vw;
+  margin-right: 20vw; */
+
+  @media only screen and (min-width: 1200px) {
+    margin-left: 25vw;
+    margin-right: 17vw;
+  }
+`
+
 export const StyledH1 = styled.h1`
-  padding-left: 25%;
-  padding-right: 25%;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 70px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 4rem;
+    line-height: 39px;
+  }
+
+  @media only screen and (max-width: 540px) {
+    font-size: 3.2rem;
+    line-height: 32px;
+  }
 `
 
 export const StyledH2 = styled.h2`
-  padding-left: 25%;
-  padding-right: 25%;
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1.9rem;
+    line-height: 25px;
+  }
+  @media only screen and (max-width: 540px) {
+    font-size: 1.6rem;
+    line-height: 21px;
+  }
 `
 
 export const StyledP = styled.p`
-  padding-left: 25%;
-  padding-right: 25%;
+  font-size: 2rem;
+  color: #aaaaaa;
+  line-height: 28px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1.7rem;
+    line-height: 24px;
+  }
+
+  @media only screen and (max-width: 540px) {
+    font-size: 1.4rem;
+    line-height: 20px;
+  }
 `
 export const StyledImageText = styled.p`
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 1.4rem;
+  color: #aaaaaa;
+  line-height: 19px;
   padding-left: 25%;
   padding-right: 25%;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1rem;
+    line-height: 15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 export const StyledImage = styled(Img)`
   /* margin-bottom: 2rem; */

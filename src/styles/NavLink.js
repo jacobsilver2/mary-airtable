@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const NavLink = styled(Link)`
   flex: 0 0 auto;
@@ -7,7 +7,14 @@ const NavLink = styled(Link)`
   line-height: 3.125rem;
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
-  color: currentColor;
+  ${props =>
+    props.active
+      ? css`
+          color: red;
+        `
+      : css`
+          color: currentColor;
+        `}
   &:hover,
   &:focus {
     opacity: 0.8s;

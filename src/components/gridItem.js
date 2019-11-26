@@ -21,8 +21,8 @@ const GridItem = props => {
       defaultStyle: {
         scale: 1.15,
         marginTop: 25,
-        imageOpacity: 0.7,
-        opacity: 0,
+        imageOpacity: 0.2,
+        opacity: 1,
       },
       style: {
         scale: spring(isHovering ? 1 : 1),
@@ -50,18 +50,16 @@ const GridItem = props => {
                 <StyledContainerImage>
                   <Img fluid={fluid} style={styleImage} alt={titleify} />
                 </StyledContainerImage>
-                <StyledOverlay>
-                  <StyledTitle style={styleTitle}>
-                    <StyledTitleText>
-                      <p dangerouslySetInnerHTML={{ __html: titleify }} />
-                      {isProtected && (
-                        <StyledPasswordText>
-                          password protected
-                        </StyledPasswordText>
-                      )}
-                    </StyledTitleText>
-                  </StyledTitle>
-                </StyledOverlay>
+                <StyledTitle style={styleTitle}>
+                  <StyledTitleText>
+                    <p dangerouslySetInnerHTML={{ __html: titleify }} />
+                    {isProtected && (
+                      <StyledPasswordText>
+                        password protected
+                      </StyledPasswordText>
+                    )}
+                  </StyledTitleText>
+                </StyledTitle>
               </StyledSubContainer>
             </StyledContainer>
           </div>

@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import GridItem from "../../components/gridItem"
 import GridContainer from "../../styles/GridContainer"
+import { CTX } from "../../components/Nav/NavContext"
 
 export const pageQuery = graphql`
   {
@@ -32,10 +33,15 @@ export const pageQuery = graphql`
 `
 
 const IndexPage = ({ data }) => {
+  const [mobileNavState, setMobileNavState] = useContext(CTX)
   const { nodes } = data.allAirtable
   const tiles = nodes.map(node => {
     return (
-      <Link key={node.id} to={`/side-notes/${node.data.Name}`}>
+      <Link
+        key={node.id}
+        to={`/side-notes/${node.data.Name}`}
+        onClick={e => setMobileNavState({ isMobileNavFolded: true })}
+      >
         <GridItem
           isProtected={node.data.passwordProtected}
           title={node.data.Name}

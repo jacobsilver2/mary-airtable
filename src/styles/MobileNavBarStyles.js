@@ -15,13 +15,13 @@ export const Wrapper = styled.div`
 `
 export const SecondaryMenu = styled.div`
   position: absolute;
-  top: 3.125rem;
+  top: 8rem;
   left: 0;
   right: 0;
   ${p =>
     p.open
       ? css`
-          height: 3.125rem;
+          height: 8rem;
         `
       : css`
           height: 0;
@@ -44,9 +44,11 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
+  margin-left: 3rem;
+  font-weight: 500;
+  font-size: 1.5rem;
   display: inline-block;
-  vertical-align: center;
-  margin-left: 1.25rem;
+  vertical-align: middle;
   color: currentColor;
 `
 

@@ -9,6 +9,7 @@ import {
   StyledImageText,
   StyledVideoContainer,
   StyledSmallImage,
+  TextWrapper,
 } from "../styles/StyledHtml"
 
 export const renderWorkHtml = node => {
@@ -25,16 +26,28 @@ export const renderWorkHtml = node => {
         />
       )
     case "h1":
-      return <StyledH1 key={id}>{Node.Text}</StyledH1>
+      return (
+        <TextWrapper>
+          <StyledH1 key={id}>{Node.Text}</StyledH1>
+        </TextWrapper>
+      )
     case "h2":
-      return <StyledH2 key={id}>{Node.Text}</StyledH2>
+      return (
+        <TextWrapper>
+          <StyledH2 key={id}>{Node.Text}</StyledH2>
+        </TextWrapper>
+      )
     case "Paragraph":
       const paragraph = Node.Link ? (
-        <a key={id} href={Node.Link}>
-          <StyledP>{Node.Text}</StyledP>
-        </a>
+        <TextWrapper>
+          <a style={{ textDecoration: "none" }} key={id} href={Node.Link}>
+            <StyledP>{Node.Text}</StyledP>
+          </a>
+        </TextWrapper>
       ) : (
-        <StyledP key={id}>{Node.Text}</StyledP>
+        <TextWrapper>
+          <StyledP key={id}>{Node.Text}</StyledP>
+        </TextWrapper>
       )
       return paragraph
     case "Image":
@@ -45,7 +58,11 @@ export const renderWorkHtml = node => {
               fluid={Node.Attachments.localFiles[0].childImageSharp.fluid}
             />
           ) : (
-            <img src={Node.Attachments[0].url} alt="" />
+            <img
+              style={{ maxWidth: "100%" }}
+              src={Node.Attachments[0].url}
+              alt=""
+            />
           )}
           {Node.Text && <StyledImageText>{Node.Text}</StyledImageText>}
         </div>
@@ -66,6 +83,7 @@ export const renderWorkHtml = node => {
     case "gif":
       return (
         <img
+          style={{ width: "100%" }}
           key={id}
           src={
             Node.Attachments.localFiles

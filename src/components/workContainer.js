@@ -1,7 +1,27 @@
 import Img from "gatsby-image"
 import React from "react"
 import { StyledImageText } from "../styles/StyledHtml"
+import styled from "styled-components"
 import Footer from "./footer"
+
+const StyledHero = styled(Img)`
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+`
+
+const StyledHeroImg = styled.img`
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+`
+
+const renderHero = hero =>
+  hero[0].childImageSharp ? (
+    <StyledHero fluid={hero[0].childImageSharp.fluid} />
+  ) : (
+    <StyledHeroImg src={hero[0].publicURL} alt="" />
+  )
 
 const WorkContainer = ({ hero, children }) => {
   return (
@@ -9,16 +29,9 @@ const WorkContainer = ({ hero, children }) => {
       {hero && (
         <>
           {hero.data ? (
-            <Img
-              fluid={hero.data.Attachments.localFiles[0].childImageSharp.fluid}
-              style={{ marginLeft: "1rem", marginRight: "1rem" }}
-            />
+            renderHero(hero.data.Attachments.localFiles)
           ) : (
-            <img
-              src={hero.fields.Attachments[0].url}
-              style={{ marginLeft: "1rem", marginRight: "1rem" }}
-              alt=""
-            />
+            <StyledHeroImg src={hero.fields.Attachments[0].url} alt="" />
           )}
           {hero.data ? (
             <StyledImageText>
@@ -31,9 +44,7 @@ const WorkContainer = ({ hero, children }) => {
           )}
         </>
       )}
-      <main style={{ marginLeft: "2rem", marginRight: "2rem" }}>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   )

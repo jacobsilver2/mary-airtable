@@ -21,11 +21,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        name: `fonts`,
-        path: `${__dirname}/src/fonts/`,
+        rule: {
+          include: /images/,
+        },
       },
     },
     {

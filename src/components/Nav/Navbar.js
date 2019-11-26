@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import {
   Wrapper,
@@ -8,9 +8,11 @@ import {
   LogoLink,
 } from "../../styles/StyledNavbar"
 import NavLinks from "./NavLinks"
+import { CTX } from "../Nav/NavContext"
 import MobileNavbar from "./MobileNavbar"
 
 const NavBar = () => {
+  const [activeNav, setActiveNav] = useContext(CTX)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +27,9 @@ const NavBar = () => {
     <Wrapper>
       <NormalNavBar>
         <StartWrapper>
-          <LogoLink>{data.site.siteMetadata.title}</LogoLink>
+          <LogoLink onClick={() => setActiveNav({ activePath: "/" })}>
+            {data.site.siteMetadata.title}
+          </LogoLink>
         </StartWrapper>
         <EndWrapper>
           <NavLinks />

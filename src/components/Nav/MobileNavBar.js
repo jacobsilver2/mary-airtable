@@ -27,7 +27,7 @@ const MobileNavBar = () => {
   `)
   return (
     <Wrapper>
-      <LogoLink>
+      <LogoLink onClick={{ isMobileNavFolded: true }}>
         <h1>{data.site.siteMetadata.title}</h1>
       </LogoLink>
       <Wrapper>

@@ -1,15 +1,18 @@
 import React from "react"
 import { navigate } from "gatsby"
-
+import { StyledH2 } from "../styles/StyledHtml"
 const Footer = () => {
   function goBack() {
     navigate("/")
   }
 
   return (
-    <h3 style={{ textAlign: "center", cursor: "pointer" }} onClick={goBack}>
+    <StyledH2
+      style={{ textAlign: "center", cursor: "pointer" }}
+      onClick={goBack}
+    >
       back
-    </h3>
+    </StyledH2>
   )
 }
 

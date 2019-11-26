@@ -18,12 +18,19 @@ export const StyledContainerImage = styled.div`
 `
 
 export const StyledPasswordText = styled.div`
-  font-size: 0.6em;
+  font-size: 1.3rem;
 `
 
 export const StyledTitle = styled.div`
-  text-align: center;
-  font-size: 18px;
+  text-align: left;
+  font-size: 3rem;
+  float: left;
+  width: 80%;
+  line-height: 38px;
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-bottom: 100px;
+  padding-top: 0px;
   color: white;
   position: absolute;
   top: 5%;
@@ -31,9 +38,7 @@ export const StyledTitle = styled.div`
 `
 
 export const StyledTitleText = styled.div`
-  /* font-size: 30px; */
   position: relative;
-  /* font-family: fertigo-pro, serif; */
   font-style: normal;
   font-weight: 400;
 `

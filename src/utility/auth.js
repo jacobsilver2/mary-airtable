@@ -38,7 +38,7 @@ export const login = () => {
   auth.authorize()
 }
 
-const setSession = (cb = () => {}, currentLinkState) => (err, authResult) => {
+const setSession = (cb = () => {}) => (err, authResult) => {
   if (err) {
     navigate("/")
     cb()
@@ -51,18 +51,20 @@ const setSession = (cb = () => {}, currentLinkState) => (err, authResult) => {
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
     user = authResult.idTokenPayload
+    const url = localStorage.getItem("url").replace(/['"]+/g, "")
+    console.log(url)
     localStorage.setItem("isLoggedIn", true)
-    navigate(currentLinkState)
+    navigate(url)
     cb()
   }
 }
 
-export const handleAuthentication = ({ currentLinkState }) => {
+export const handleAuthentication = () => {
   if (!isBrowser) {
     return
   }
 
-  auth.parseHash(setSession(currentLinkState))
+  auth.parseHash(setSession())
 }
 
 export const getProfile = () => {

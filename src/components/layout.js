@@ -1,30 +1,20 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
-import "typeface-rubik"
-import rem from "../utility/rem"
 import Nav from "./Nav"
+import { Wrapper, GlobalStyle } from "../styles/GlobalStyle"
 
-const GlobalStyle = createGlobalStyle`
-  h1 {
+const Layout = props => (
+  <>
+    <GlobalStyle />
+    <Nav />
+    <main>{props.children}</main>
+  </>
+)
 
-  }
-  body {
-    margin: 0;
-    font-family: "Rubik";
-    letter-spacing: ${rem(0.25)};
-  }
-`
-
-class Layout extends React.Component {
-  render() {
-    return (
-      <>
-        <GlobalStyle />
-        <Nav />
-        {this.props.children}
-      </>
-    )
-  }
-}
+// const Layout = props => (
+//   <div className="container">
+//     <Nav />
+//     {props.children}
+//   </div>
+// )
 
 export default Layout

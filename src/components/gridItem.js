@@ -1,30 +1,28 @@
-import React, { useState, useContext } from "react"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
-import { CTX } from "../contexts/urlContext"
-import { spring, Motion } from "react-motion"
+import React, { useState } from "react"
+import { Motion, spring } from "react-motion"
+import { capitalize } from "../utility/capitalize"
 import {
   StyledContainer,
-  StyledSubContainer,
   StyledContainerImage,
-  StyledTitle,
-  StyledTitleText,
   StyledOverlay,
   StyledPasswordText,
+  StyledSubContainer,
+  StyledTitle,
+  StyledTitleText,
 } from "../styles/StyledGridItem"
 
 const GridItem = props => {
-  const { fluid, title, url, isProtected } = props
-  console.log(props)
+  const { fluid, title, isProtected } = props
+  const titleify = capitalize(title.replace(/[-]+/g, " "))
   const [isHovering, setIsHovering] = useState(false)
-  const [currentLinkState, setCurrentLinkState] = useContext(CTX)
   const getSpringProps = () => {
     return {
       defaultStyle: {
         scale: 1.15,
         marginTop: 25,
-        imageOpacity: 0.7,
-        opacity: 0,
+        imageOpacity: 0.2,
+        opacity: 1,
       },
       style: {
         scale: spring(isHovering ? 1 : 1),
@@ -47,33 +45,23 @@ const GridItem = props => {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            {/* <Link
-              to={url}
-              onClick={() => {
-                console.log(props)
-                setCurrentLinkState({ currentUrl: url })
-              }}
-            > */}
             <StyledContainer>
               <StyledSubContainer>
                 <StyledContainerImage>
-                  <Img fluid={fluid} style={styleImage} alt={title} />
+                  <Img fluid={fluid} style={styleImage} alt={titleify} />
                 </StyledContainerImage>
-                <StyledOverlay>
-                  <StyledTitle style={styleTitle}>
-                    <StyledTitleText>
-                      <p dangerouslySetInnerHTML={{ __html: title }} />
-                      {isProtected && (
-                        <StyledPasswordText>
-                          password protected
-                        </StyledPasswordText>
-                      )}
-                    </StyledTitleText>
-                  </StyledTitle>
-                </StyledOverlay>
+                <StyledTitle style={styleTitle}>
+                  <StyledTitleText>
+                    <p dangerouslySetInnerHTML={{ __html: titleify }} />
+                    {isProtected && (
+                      <StyledPasswordText>
+                        password protected
+                      </StyledPasswordText>
+                    )}
+                  </StyledTitleText>
+                </StyledTitle>
               </StyledSubContainer>
             </StyledContainer>
-            {/* </Link> */}
           </div>
         )
       }}

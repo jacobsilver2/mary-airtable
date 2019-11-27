@@ -10,11 +10,4 @@ const Layout = props => (
   </>
 )
 
-// const Layout = props => (
-//   <div className="container">
-//     <Nav />
-//     {props.children}
-//   </div>
-// )
-
 export default Layout

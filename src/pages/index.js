@@ -34,7 +34,7 @@ export const pageQuery = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  // Similar to useState but first arg is key to the value in local storage.
+  //? Similar to useState but first arg is key to the value in local storage.
   const [url, setUrl] = useLocalStorage("url", "/")
   const [mobileNavState, setMobileNavState] = useContext(CTX)
   const { nodes } = data.allAirtable

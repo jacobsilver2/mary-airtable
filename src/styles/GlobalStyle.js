@@ -14,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
 
 }
+
+@import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
+
 html {
   box-sizing: border-box;
   font-size: 10px;
@@ -33,5 +36,11 @@ body {
     margin: 0;
     letter-spacing: ${rem(0.25)}; */
     }
+   h2 {
+    font-family: 'Bitter';
+   } 
+   p {
+     font-family: "Bitter";
+   }
 }
 `

@@ -2,15 +2,18 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 export const TextWrapper = styled.div`
-  /* display: grid;
-  grid-template-columns: 1fr 3fr 1fr; */
-  /* margin-left: 20vw;
-  margin-right: 20vw; */
-
   @media only screen and (min-width: 1200px) {
     margin-left: 25vw;
     margin-right: 17vw;
   }
+`
+export const ImageWrapper = styled.div`
+  margin-bottom: 2rem;
+`
+
+export const SmallImageWrapper = styled.div`
+  margin-bottom: 2rem;
+  text-align: center;
 `
 
 export const StyledH1 = styled.h1`

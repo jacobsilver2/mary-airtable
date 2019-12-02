@@ -1,3 +1,4 @@
+// src/utils/auth.js
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
 
@@ -5,15 +6,14 @@ const isBrowser = typeof window !== "undefined"
 
 const auth = isBrowser
   ? new auth0.WebAuth({
-      domain: process.env.GATSBY_AUTH0_DOMAIN,
-      clientID: process.env.GATSBY_AUTH0_CLIENTID,
-      redirectUri: process.env.GATSBY_AUTH0_CALLBACK,
+      domain: process.env.AUTH0_DOMAIN,
+      clientID: process.env.AUTH0_CLIENTID,
+      redirectUri: process.env.AUTH0_CALLBACK,
       responseType: "token id_token",
       scope: "openid profile email",
     })
   : {}
 
-// insert after auth const
 const tokens = {
   accessToken: false,
   idToken: false,
@@ -51,12 +51,15 @@ const setSession = (cb = () => {}) => (err, authResult) => {
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
     user = authResult.idTokenPayload
-    const url = localStorage.getItem("url").replace(/['"]+/g, "")
-    console.log(url)
     localStorage.setItem("isLoggedIn", true)
-    navigate(url)
+    navigate("/account")
     cb()
   }
+}
+
+export const silentAuth = callback => {
+  if (!isAuthenticated()) return callback()
+  auth.checkSession({}, setSession(callback))
 }
 
 export const handleAuthentication = () => {
@@ -69,11 +72,6 @@ export const handleAuthentication = () => {
 
 export const getProfile = () => {
   return user
-}
-
-export const silentAuth = callback => {
-  if (!isAuthenticated()) return callback()
-  auth.checkSession({}, setSession(callback))
 }
 
 export const logout = () => {

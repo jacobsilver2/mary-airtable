@@ -7,7 +7,7 @@ import {
   StartWrapper,
   Wrapper,
 } from "../../styles/StyledNavbar"
-import MobileNavbar from "./MobileNavbar"
+import MobileNavbar from "./MobileNavBar"
 import NavLinks from "./NavLinks"
 
 const NavBar = ({ isMobileNavOpen, setMobileNav }) => {

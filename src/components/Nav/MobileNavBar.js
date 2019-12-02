@@ -12,6 +12,7 @@ import {
   LogoLink,
   IconWrapper,
 } from "../../styles/MobileNavBarStyles"
+
 const MobileNavBar = ({ isMobileNavOpen, setMobileNav }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQueryNumberTwo {

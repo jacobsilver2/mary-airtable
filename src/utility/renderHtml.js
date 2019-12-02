@@ -31,8 +31,8 @@ export const renderWorkHtml = node => {
       )
     case "h1":
       return (
-        <TextWrapper>
-          <StyledH1 key={id}>{Node.Text}</StyledH1>
+        <TextWrapper key={id}>
+          <StyledH1>{Node.Text}</StyledH1>
         </TextWrapper>
       )
     case "h2":
@@ -53,10 +53,12 @@ export const renderWorkHtml = node => {
     case "Image":
       const image = Node.Attachments.localFiles ? (
         <StyledImage
+          key={id}
           fluid={Node.Attachments.localFiles[0].childImageSharp.fluid}
         />
       ) : (
         <img
+          key={id}
           style={{ maxWidth: "100%" }}
           src={Node.Attachments[0].url}
           alt=""
@@ -71,10 +73,11 @@ export const renderWorkHtml = node => {
     case "Small-Image":
       const smallImageHtml = Node.Attachments.localFiles ? (
         <StyledSmallImage
+          key={id}
           fluid={Node.Attachments.localFiles[0].childImageSharp.fluid}
         />
       ) : (
-        <img src={Node.Attachments[0].url} alt="" />
+        <img key={id} src={Node.Attachments[0].url} alt="" />
       )
       return (
         <SmallImageWrapper key={id}>

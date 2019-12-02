@@ -1,7 +1,6 @@
-import React, { useContext } from "react"
+import React from "react"
 import styled from "styled-components"
 import NavLink from "../../styles/NavLink"
-import { CTX } from "./NavContext"
 import NavSeparator from "../../styles/NavSeparator"
 import {
   StyledBehance,
@@ -14,38 +13,18 @@ const Wrapper = styled.nav`
   align-items: center;
   flex: 0 0 auto;
 `
-
-const NavLinks = () => {
-  const [activePath, setActivePath] = useContext(CTX)
+const NavLinks = ({ isMobileNavOpen, setMobileNav }) => {
   return (
     <Wrapper>
-      <NavLink
-        onClick={() =>
-          setActivePath({ activePath: "/", isMobileNavFolded: true })
-        }
-        active={activePath.activePath === "/"}
-        to="/"
-      >
+      <NavLink onClick={() => setMobileNav(false)} to="/">
         Work
       </NavLink>
       <NavSeparator />
-      <NavLink
-        onClick={() =>
-          setActivePath({ activePath: "/side-notes", isMobileNavFolded: true })
-        }
-        active={activePath.activePath === "/side-notes"}
-        to="/side-notes"
-      >
+      <NavLink onClick={() => setMobileNav(false)} to="/side-notes">
         Side-Notes
       </NavLink>
       <NavSeparator />
-      <NavLink
-        onClick={() =>
-          setActivePath({ activePath: "/about", isMobileNavFolded: true })
-        }
-        active={activePath.activePath === "/about"}
-        to="/about"
-      >
+      <NavLink onClick={() => setMobileNav(false)} to="/about">
         About
       </NavLink>
       <NavSeparator />

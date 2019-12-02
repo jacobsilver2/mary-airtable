@@ -1,11 +1,10 @@
-import React, { useContext } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import NavLinks from "./NavLinks"
 import NavSeparator from "../../styles/NavSeparator"
 import NavButton from "../../styles/NavButton"
-import { CTX } from "./NavContext"
 
 import {
   Wrapper,
@@ -13,9 +12,7 @@ import {
   LogoLink,
   IconWrapper,
 } from "../../styles/MobileNavBarStyles"
-
-const MobileNavBar = () => {
-  const [navState, updateNavState] = useContext(CTX)
+const MobileNavBar = ({ isMobileNavOpen, setMobileNav }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQueryNumberTwo {
       site {
@@ -27,23 +24,21 @@ const MobileNavBar = () => {
   `)
   return (
     <Wrapper>
-      <LogoLink onClick={{ isMobileNavFolded: true }}>
+      <LogoLink onClick={() => setMobileNav(false)}>
         <h1>{data.site.siteMetadata.title}</h1>
       </LogoLink>
       <Wrapper>
         <NavButton
-          onClick={() =>
-            updateNavState({ isMobileNavFolded: !navState.isMobileNavFolded })
-          }
-          active={!navState.isMobileNavFolded}
+          onClick={() => setMobileNav(!isMobileNavOpen)}
+          active={isMobileNavOpen}
         >
-          <IconWrapper rotate={!navState.isMobileNavFolded}>
+          <IconWrapper rotate={isMobileNavOpen}>
             <FontAwesomeIcon icon={faChevronDown} />
           </IconWrapper>
         </NavButton>
       </Wrapper>
 
-      <SecondaryMenu open={!navState.isMobileNavFolded}>
+      <SecondaryMenu open={isMobileNavOpen}>
         <NavLinks />
         <NavSeparator />
       </SecondaryMenu>

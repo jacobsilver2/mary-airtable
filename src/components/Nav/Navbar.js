@@ -1,18 +1,16 @@
-import React, { useContext } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
+import React from "react"
 import {
-  Wrapper,
-  NormalNavBar,
-  StartWrapper,
   EndWrapper,
   LogoLink,
+  NormalNavBar,
+  StartWrapper,
+  Wrapper,
 } from "../../styles/StyledNavbar"
-import NavLinks from "./NavLinks"
-import { CTX } from "../Nav/NavContext"
 import MobileNavbar from "./MobileNavbar"
+import NavLinks from "./NavLinks"
 
-const NavBar = () => {
-  const [activeNav, setActiveNav] = useContext(CTX)
+const NavBar = ({ isMobileNavOpen, setMobileNav }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,15 +25,26 @@ const NavBar = () => {
     <Wrapper>
       <NormalNavBar>
         <StartWrapper>
-          <LogoLink onClick={() => setActiveNav({ activePath: "/" })}>
+          <LogoLink
+            onClick={() => {
+              setMobileNav(false)
+              navigate("/")
+            }}
+          >
             {data.site.siteMetadata.title}
           </LogoLink>
         </StartWrapper>
         <EndWrapper>
-          <NavLinks />
+          <NavLinks
+            isMobileNavOpen={isMobileNavOpen}
+            setMobileNav={setMobileNav}
+          />
         </EndWrapper>
       </NormalNavBar>
-      <MobileNavbar />
+      <MobileNavbar
+        isMobileNavOpen={isMobileNavOpen}
+        setMobileNav={setMobileNav}
+      />
     </Wrapper>
   )
 }

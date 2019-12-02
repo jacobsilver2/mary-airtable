@@ -1,5 +1,4 @@
 import React from "react"
-import NavStore from "./src/components/Nav/NavContext"
 import { silentAuth } from "./src/utility/auth"
 
 class SessionCheck extends React.Component {
@@ -30,9 +29,7 @@ class SessionCheck extends React.Component {
 export const wrapRootElement = ({ element }) => {
   return (
     <>
-      <NavStore>
-        <SessionCheck>{element}</SessionCheck>
-      </NavStore>
+      <SessionCheck>{element}</SessionCheck>
     </>
   )
 }

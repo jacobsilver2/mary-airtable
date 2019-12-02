@@ -10,7 +10,7 @@ import {
 import MobileNavbar from "./MobileNavBar"
 import NavLinks from "./NavLinks"
 
-const NavBar = ({ isMobileNavOpen, setMobileNav }) => {
+const NavBarComponent = ({ isMobileNavOpen, setMobileNav }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -49,4 +49,4 @@ const NavBar = ({ isMobileNavOpen, setMobileNav }) => {
   )
 }
 
-export default NavBar
+export default NavBarComponent

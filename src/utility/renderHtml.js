@@ -2,8 +2,8 @@ import React from "react"
 import Img from "gatsby-image"
 import Iframe from "react-iframe"
 import {
-  StyledH1,
-  StyledH2,
+  StyledHOne,
+  StyledHTwo,
   StyledP,
   StyledImage,
   StyledImageText,
@@ -32,13 +32,13 @@ export const renderWorkHtml = node => {
     case "h1":
       return (
         <TextWrapper key={id}>
-          <StyledH1>{Node.Text}</StyledH1>
+          <StyledHOne>{Node.Text}</StyledHOne>
         </TextWrapper>
       )
     case "h2":
       return (
         <TextWrapper>
-          <StyledH2 key={id}>{Node.Text}</StyledH2>
+          <StyledHTwo key={id}>{Node.Text}</StyledHTwo>
         </TextWrapper>
       )
     case "Paragraph":

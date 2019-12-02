@@ -1,5 +1,5 @@
 import React from "react"
-import Nav from "./Nav/Nav"
+import Nav from "./Nav/NavRoot"
 import { Wrapper, GlobalStyle } from "../styles/GlobalStyle"
 
 const Layout = props => (

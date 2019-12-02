@@ -2,7 +2,7 @@ import Img from "gatsby-image"
 import React from "react"
 import { StyledImageText } from "../styles/StyledHtml"
 import styled from "styled-components"
-import Footer from "./footer"
+import Footer from "./Footer"
 
 const StyledHero = styled(Img)`
   display: block;

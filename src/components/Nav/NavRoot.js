@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import Navbar from "./Navbar"
+import NavBar from "./NavBar"
 // heavily borrowing from https://github.com/arsmth/gatsby-responsive-nav
 
 const Nav = () => {
   const [isMobileNavOpen, setMobileNav] = useState(false)
   return (
     <>
-      <Navbar isMobileNavOpen={isMobileNavOpen} setMobileNav={setMobileNav} />
+      <NavBar isMobileNavOpen={isMobileNavOpen} setMobileNav={setMobileNav} />
     </>
   )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import WorkContainer from "../components/workContainer"
+import WorkContainer from "../components/WorkContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
 const ProjectTemplate = props => {

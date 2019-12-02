@@ -31,7 +31,7 @@ export const pageQuery = graphql`
   }
 `
 
-const IndexPage = ({ data }) => {
+const SideNotesIndexPage = ({ data }) => {
   const { nodes } = data.allAirtable
   const tiles = nodes.map(node => {
     return (
@@ -53,4 +53,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default SideNotesIndexPage

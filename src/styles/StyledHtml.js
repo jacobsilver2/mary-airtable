@@ -16,7 +16,7 @@ export const SmallImageWrapper = styled.div`
   text-align: center;
 `
 
-export const StyledH1 = styled.h1`
+export const StyledHOne = styled.h1`
   font-size: 6rem;
   font-weight: 400;
   line-height: 70px;
@@ -32,7 +32,7 @@ export const StyledH1 = styled.h1`
   }
 `
 
-export const StyledH2 = styled.h2`
+export const StyledHTwo = styled.h2`
   font-size: 2.6rem;
   font-style: normal;
   font-weight: 400;

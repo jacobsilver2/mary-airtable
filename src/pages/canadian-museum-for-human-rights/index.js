@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
-import WorkContainer from "../../components/workContainer"
+import WorkContainer from "../../components/WorkContainer"
 import { cmhr } from "../../utility/airtableUrls"
 import { isAuthenticated, login } from "../../utility/auth"
 import { renderWorkHtml } from "../../utility/renderHtml"

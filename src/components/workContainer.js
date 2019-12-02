@@ -2,7 +2,7 @@ import Img from "gatsby-image"
 import React from "react"
 import { StyledImageText } from "../styles/StyledHtml"
 import styled from "styled-components"
-import Footer from "./Footer"
+import Footer from "./footerComponent"
 
 const StyledHero = styled(Img)`
   display: block;
@@ -23,7 +23,7 @@ const renderHero = hero =>
     <StyledHeroImg src={hero[0].publicURL} alt="" />
   )
 
-const WorkContainer = ({ hero, children }) => {
+const workContainer = ({ hero, children }) => {
   return (
     <>
       {hero && (
@@ -50,4 +50,4 @@ const WorkContainer = ({ hero, children }) => {
   )
 }
 
-export default WorkContainer
+export default workContainer

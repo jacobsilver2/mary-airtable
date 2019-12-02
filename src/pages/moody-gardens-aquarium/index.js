@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
-import WorkContainer from "../../components/workContainer"
+import WorkContainerComponent from "../../components/workContainer"
 import { moody } from "../../utility/airtableUrls"
 import { isAuthenticated, login } from "../../utility/auth"
 import { renderWorkHtml } from "../../utility/renderHtml"
@@ -24,7 +24,7 @@ const MoodyGardensPage = props => {
     .map(node => renderWorkHtml(node))
   return (
     <Layout>
-      <WorkContainer hero={hero}>{myhtml}</WorkContainer>
+      <WorkContainerComponent hero={hero}>{myhtml}</WorkContainerComponent>
     </Layout>
   )
 }

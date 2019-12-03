@@ -13,21 +13,49 @@ const Wrapper = styled.nav`
   align-items: center;
   flex: 0 0 auto;
 `
-const NavLinks = ({ isMobileNavOpen, setMobileNav }) => {
+//? look into useRef instead of useState for active link monitoring.  State seems to be
+//? refreshing too much.
+
+const NavLinks = ({ isMobileNavOpen, setMobileNav, active, setActive }) => {
   return (
     <Wrapper>
-      <NavLink onClick={() => setMobileNav(false)} to="/">
+      <NavLink
+        onClick={() => {
+          setActive("/")
+          setMobileNav(false)
+        }}
+        active={active === "/"}
+        to="/"
+      >
         Work
       </NavLink>
       <NavSeparator />
-      <NavLink onClick={() => setMobileNav(false)} to="/side-notes">
+      <NavLink
+        onClick={() => {
+          setActive("/side-notes")
+          setMobileNav(false)
+        }}
+        active={active === "/side-notes"}
+        to="/side-notes"
+      >
         Side-Notes
       </NavLink>
+
       <NavSeparator />
-      <NavLink onClick={() => setMobileNav(false)} to="/about">
+
+      <NavLink
+        onClick={() => {
+          setActive("/about")
+          setMobileNav(false)
+        }}
+        active={active === "/about"}
+        to="/about"
+      >
         About
       </NavLink>
+
       <NavSeparator />
+
       <a href="https://www.behance.net/MaryChoueiter">
         <StyledBehance fill="grey" />
       </a>

@@ -1,7 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { StyledHTwo } from "../styles/StyledHtml"
-const Footer = () => {
+const FooterComponent = () => {
   function goBack() {
     navigate("/")
   }
@@ -16,4 +16,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default FooterComponent

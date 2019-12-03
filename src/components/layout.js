@@ -1,11 +1,11 @@
 import React from "react"
-import Nav from "./Nav/NavRoot"
+import NavComponent from "./navFolder/NavRoot"
 import { Wrapper, GlobalStyle } from "../styles/GlobalStyle"
 
 const Layout = props => (
   <>
     <GlobalStyle />
-    <Nav />
+    <NavComponent />
     <main>{props.children}</main>
   </>
 )

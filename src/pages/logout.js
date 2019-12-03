@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { logout } from "../utility/auth"
 
 const LogoutPage = () => {
-  logout()
+  // logout()
+  useEffect(() => {
+    logout()
+  }, [])
   return <div>logging out</div>
 }
 

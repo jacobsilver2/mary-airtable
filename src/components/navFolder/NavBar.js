@@ -10,7 +10,12 @@ import {
 import MobileNavbar from "./MobileNavBar"
 import NavLinks from "./NavLinks"
 
-const NavBar = ({ isMobileNavOpen, setMobileNav }) => {
+const NavBarComponent = ({
+  isMobileNavOpen,
+  setMobileNav,
+  active,
+  setActive,
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,6 +32,7 @@ const NavBar = ({ isMobileNavOpen, setMobileNav }) => {
         <StartWrapper>
           <LogoLink
             onClick={() => {
+              setActive("/")
               setMobileNav(false)
               navigate("/")
             }}
@@ -38,15 +44,19 @@ const NavBar = ({ isMobileNavOpen, setMobileNav }) => {
           <NavLinks
             isMobileNavOpen={isMobileNavOpen}
             setMobileNav={setMobileNav}
+            active={active}
+            setActive={setActive}
           />
         </EndWrapper>
       </NormalNavBar>
       <MobileNavbar
         isMobileNavOpen={isMobileNavOpen}
         setMobileNav={setMobileNav}
+        active={active}
+        setActive={setActive}
       />
     </Wrapper>
   )
 }
 
-export default NavBar
+export default NavBarComponent

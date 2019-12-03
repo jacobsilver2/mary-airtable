@@ -13,7 +13,7 @@ import {
   IconWrapper,
 } from "../../styles/MobileNavBarStyles"
 
-const MobileNavBar = ({ isMobileNavOpen, setMobileNav }) => {
+const MobileNavBar = ({ isMobileNavOpen, setMobileNav, active, setActive }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQueryNumberTwo {
       site {

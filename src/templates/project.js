@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import WorkContainer from "../components/WorkContainer"
+import WorkContainerComponent from "../components/workContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
 const ProjectTemplate = props => {
@@ -17,7 +17,7 @@ const ProjectTemplate = props => {
     <>
       <Layout>
         <Helmet title={title} />
-        <WorkContainer hero={hero}>{myhtml}</WorkContainer>
+        <WorkContainerComponent hero={hero}>{myhtml}</WorkContainerComponent>
       </Layout>
     </>
   )

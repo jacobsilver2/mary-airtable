@@ -1,7 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import GridItem from "../components/gridItem"
-import Layout from "../components/layout"
 import GridContainer from "../styles/GridContainer"
 
 export const pageQuery = graphql`
@@ -53,9 +52,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <Layout>
-        <GridContainer>{tiles}</GridContainer>
-      </Layout>
+      <GridContainer>{tiles}</GridContainer>
     </>
   )
 }

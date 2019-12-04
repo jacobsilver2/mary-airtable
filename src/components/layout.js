@@ -1,13 +1,14 @@
 import React from "react"
+import { ContextProviderComponent } from "../contexts/navContext"
+import { GlobalStyle } from "../styles/GlobalStyle"
 import NavComponent from "./navFolder/NavRoot"
-import { Wrapper, GlobalStyle } from "../styles/GlobalStyle"
 
 const Layout = props => (
-  <>
+  <ContextProviderComponent>
     <GlobalStyle />
     <NavComponent />
     <main>{props.children}</main>
-  </>
+  </ContextProviderComponent>
 )
 
 export default Layout

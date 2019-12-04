@@ -27,5 +27,9 @@ class SessionCheck extends React.Component {
 }
 
 export const wrapRootElement = ({ element }) => {
-  return <SessionCheck>{element}</SessionCheck>
+  return (
+    <>
+      <SessionCheck>{element}</SessionCheck>
+    </>
+  )
 }

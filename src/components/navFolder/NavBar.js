@@ -9,13 +9,9 @@ import {
 } from "../../styles/StyledNavbar"
 import MobileNavbar from "./MobileNavBar"
 import NavLinks from "./NavLinks"
+import ContextConsumer from "../../contexts/navContext"
 
-const NavBarComponent = ({
-  isMobileNavOpen,
-  setMobileNav,
-  active,
-  setActive,
-}) => {
+const NavBarComponent = () => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,35 +23,30 @@ const NavBarComponent = ({
   `)
 
   return (
-    <Wrapper>
-      <NormalNavBar>
-        <StartWrapper>
-          <LogoLink
-            onClick={() => {
-              setActive("/")
-              setMobileNav(false)
-              navigate("/")
-            }}
-          >
-            {data.site.siteMetadata.title}
-          </LogoLink>
-        </StartWrapper>
-        <EndWrapper>
-          <NavLinks
-            isMobileNavOpen={isMobileNavOpen}
-            setMobileNav={setMobileNav}
-            active={active}
-            setActive={setActive}
-          />
-        </EndWrapper>
-      </NormalNavBar>
-      <MobileNavbar
-        isMobileNavOpen={isMobileNavOpen}
-        setMobileNav={setMobileNav}
-        active={active}
-        setActive={setActive}
-      />
-    </Wrapper>
+    <ContextConsumer>
+      {({ menuData, set }) => {
+        return (
+          <Wrapper>
+            <NormalNavBar>
+              <StartWrapper>
+                <LogoLink
+                  onClick={() => {
+                    set({ menuOpen: false })
+                    navigate("/")
+                  }}
+                >
+                  {data.site.siteMetadata.title}
+                </LogoLink>
+              </StartWrapper>
+              <EndWrapper>
+                <NavLinks />
+              </EndWrapper>
+            </NormalNavBar>
+            <MobileNavbar />
+          </Wrapper>
+        )
+      }}
+    </ContextConsumer>
   )
 }
 

@@ -1,6 +1,5 @@
-import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
+import React from "react"
 import GridItem from "../../components/gridItem"
 import GridContainer from "../../styles/GridContainer"
 
@@ -46,11 +45,7 @@ const SideNotesIndexPage = ({ data }) => {
     )
   })
 
-  return (
-    <Layout>
-      <GridContainer>{tiles}</GridContainer>
-    </Layout>
-  )
+  return <GridContainer>{tiles}</GridContainer>
 }
 
 export default SideNotesIndexPage

@@ -10,6 +10,12 @@ module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-create-client-paths`,
       options: {
         prefixes: [

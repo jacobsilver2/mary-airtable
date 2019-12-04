@@ -1,6 +1,5 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
-import Layout from "../../components/layout"
 import WorkContainerComponent from "../../components/workContainer"
 import { cmhr } from "../../utility/airtableUrls"
 import { isAuthenticated, login } from "../../utility/auth"
@@ -22,11 +21,7 @@ const CMHRPage = props => {
   const myhtml = nodes
     .filter(node => node.fields.Type !== "Hero")
     .map(node => renderWorkHtml(node))
-  return (
-    <Layout>
-      <WorkContainerComponent hero={hero}>{myhtml}</WorkContainerComponent>
-    </Layout>
-  )
+  return <WorkContainerComponent hero={hero}>{myhtml}</WorkContainerComponent>
 }
 
 export default CMHRPage

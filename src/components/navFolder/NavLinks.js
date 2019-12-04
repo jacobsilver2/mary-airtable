@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import NavLink from "../../styles/NavLink"
 import NavSeparator from "../../styles/NavSeparator"
+import ContextConsumer from "../../contexts/navContext"
 import {
   StyledBehance,
   StyledLinkedIn,
@@ -13,59 +14,57 @@ const Wrapper = styled.nav`
   align-items: center;
   flex: 0 0 auto;
 `
-//? look into useRef instead of useState for active link monitoring.  State seems to be
-//? refreshing too much.
 
-const NavLinks = ({ isMobileNavOpen, setMobileNav, active, setActive }) => {
+const NavLinks = () => {
   return (
-    <Wrapper>
-      <NavLink
-        onClick={() => {
-          setActive("/")
-          setMobileNav(false)
-        }}
-        active={active === "/"}
-        to="/"
-      >
-        Work
-      </NavLink>
-      <NavSeparator />
-      <NavLink
-        onClick={() => {
-          setActive("/side-notes")
-          setMobileNav(false)
-        }}
-        active={active === "/side-notes"}
-        to="/side-notes"
-      >
-        Side-Notes
-      </NavLink>
+    <ContextConsumer>
+      {({ menuData, set }) => {
+        return (
+          <Wrapper>
+            <NavLink
+              onClick={() => {
+                set({ menuOpen: false })
+              }}
+              to="/"
+            >
+              Work
+            </NavLink>
+            <NavSeparator />
+            <NavLink
+              onClick={() => {
+                set({ menuOpen: false })
+              }}
+              to="/side-notes"
+            >
+              Side-Notes
+            </NavLink>
 
-      <NavSeparator />
+            <NavSeparator />
 
-      <NavLink
-        onClick={() => {
-          setActive("/about")
-          setMobileNav(false)
-        }}
-        active={active === "/about"}
-        to="/about"
-      >
-        About
-      </NavLink>
+            <NavLink
+              onClick={() => {
+                set({ menuOpen: false })
+              }}
+              to="/about"
+            >
+              About
+            </NavLink>
 
-      <NavSeparator />
+            <NavSeparator />
 
-      <a href="https://www.behance.net/MaryChoueiter">
-        <StyledBehance fill="grey" />
-      </a>
-      <a href="https://www.instagram.com/tahhiyakaryoka/">
-        <StyledLinkedIn fill="grey" />
-      </a>
-      <a href="https://www.linkedin.com/in/marychoueiter">
-        <StyledInstagram fill="grey" />
-      </a>
-    </Wrapper>
+            <a href="https://www.behance.net/MaryChoueiter">
+              <StyledBehance fill="grey" />
+            </a>
+            <a href="https://www.instagram.com/tahhiyakaryoka/">
+              <StyledLinkedIn fill="grey" />
+            </a>
+            <a href="https://www.linkedin.com/in/marychoueiter">
+              <StyledInstagram fill="grey" />
+            </a>
+          </Wrapper>
+        )
+      }}
+    </ContextConsumer>
   )
 }
 

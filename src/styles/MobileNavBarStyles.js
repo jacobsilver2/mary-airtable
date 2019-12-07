@@ -44,7 +44,7 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   font-weight: 500;
   font-size: 1.5rem;
   display: inline-block;

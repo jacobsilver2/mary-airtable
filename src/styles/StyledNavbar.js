@@ -28,7 +28,7 @@ export const NormalNavBar = styled.div`
   height: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0 ${rem(20)};
+  /* padding: 0 ${rem(20)}; */
 
   ${mobile(
     css`
@@ -55,32 +55,45 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   font-weight: 500;
   font-size: 3rem;
   display: inline-block;
   vertical-align: middle;
-  margin-right: ${rem(35)};
+  /* margin-right: ${rem(35)}; */
   color: currentColor;
 `
 
 export const StyledBehance = styled(props => <Behance {...props} />)`
-  margin: auto 10px;
+  display: block;
+  text-align: center;
+  ${"" /* margin: auto 0.5rem; */}
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
   :hover {
-    fill: black;
+    fill: red;
   }
 `
 
 export const StyledLinkedIn = styled(props => <Linkedin {...props} />)`
-  margin: auto 10px;
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
   :hover {
-    fill: black;
+    fill: red;
   }
 `
 
 export const StyledInstagram = styled(props => <Instagram {...props} />)`
-  margin: auto 10px;
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
   :hover {
-    fill: black;
+    fill: red;
   }
 `

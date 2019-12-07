@@ -1,12 +1,12 @@
-import React, { useContext } from "react"
+import React from "react"
 import styled from "styled-components"
+import ContextConsumer from "../../contexts/navContext"
 import NavLink from "../../styles/NavLink"
 import NavSeparator from "../../styles/NavSeparator"
-import ContextConsumer from "../../contexts/navContext"
 import {
   StyledBehance,
-  StyledLinkedIn,
   StyledInstagram,
+  StyledLinkedIn,
 } from "../../styles/StyledNavbar"
 
 const Wrapper = styled.nav`

@@ -5,8 +5,8 @@ const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 10px;
   margin: 0 auto;
-  max-width: 1620px;
-  padding: 0px 1.0875rem 1.45rem;
+  /* max-width: 1620px; */
+  /* padding: 0px 1.0875rem 1.45rem; */
   padding-top: 0;
 `
 

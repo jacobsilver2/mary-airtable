@@ -26,7 +26,6 @@ const MobileNavBar = () => {
   return (
     <ContextConsumer>
       {({ menuData, set }) => {
-        console.log(menuData)
         return (
           <Wrapper>
             <LogoLink onClick={() => set({ menuOpen: false })}>

@@ -9,7 +9,7 @@ const NavButton = styled.button`
   min-width: ${rem(navbarHeight)};
   height: ${rem(navbarHeight)};
   color: black;
-  text-align: center;
+  text-align: right;
   vertical-align: middle;
   cursor: pointer;
   ${props =>

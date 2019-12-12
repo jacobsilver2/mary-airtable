@@ -10,19 +10,21 @@ module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-layout`,
+      resolve: "@mkitio/gatsby-theme-password-protect",
       options: {
-        component: require.resolve(`./src/components/layout.js`),
+        partialMatching: false,
+        pagePaths: [
+          "/moody-gardens-aquarium/",
+          "/melab-gallery-in-the-phillip-and-patricia-frost-museum/",
+          "/canadian-museum-for-human-rights/",
+        ],
+        password: process.env.GATSBY_THEME_PASSWORD_PROTECT_PASSWORD,
       },
     },
     {
-      resolve: `gatsby-plugin-create-client-paths`,
+      resolve: `gatsby-plugin-layout`,
       options: {
-        prefixes: [
-          `/canadian-museum-for-human-rights/*`,
-          `/melab-gallery-in-the-phillip-and-patricia-frost-museum/*`,
-          `/moody-gardens-aquarium/*`,
-        ],
+        component: require.resolve(`./src/components/layout.js`),
       },
     },
     `gatsby-plugin-react-helmet`,

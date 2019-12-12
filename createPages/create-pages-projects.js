@@ -23,17 +23,13 @@ function graphqlForProjects(graphql, createPage) {
   return graphql(`
     {
       projects: allAirtable(
-        filter: {
-          table: { eq: "WorkHome" }
-          data: { passwordProtected: { ne: true } }
-        }
+        filter: { table: { eq: "WorkHome" } }
         sort: { fields: data___Order }
       ) {
         nodes {
           data {
             Name
             Order
-            passwordProtected
             Attachments {
               localFiles {
                 childImageSharp {

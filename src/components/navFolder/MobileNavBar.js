@@ -1,4 +1,4 @@
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { faChevronDown, faMobile } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
@@ -8,6 +8,9 @@ import {
   LogoLink,
   SecondaryMenu,
   Wrapper,
+  BarOne,
+  BarTwo,
+  BarThree,
 } from "../../styles/MobileNavBarStyles"
 import NavButton from "../../styles/NavButton"
 import NavSeparator from "../../styles/NavSeparator"
@@ -33,9 +36,12 @@ const MobileNavBar = () => {
             </LogoLink>
             <Wrapper>
               <NavButton onClick={() => set({ menuOpen: !menuData.menuOpen })}>
-                <IconWrapper rotate={menuData.menuOpen}>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </IconWrapper>
+                {/* <IconWrapper rotate={menuData.menuOpen}>
+                  <FontAwesomeIcon icon={faMobile} />
+                </IconWrapper> */}
+                <BarOne change={menuData.menuOpen} />
+                <BarTwo change={menuData.menuOpen} />
+                <BarThree change={menuData.menuOpen} />
               </NavButton>
             </Wrapper>
 

@@ -59,9 +59,49 @@ export const IconWrapper = styled.div`
     p.rotate &&
     css`
       transform-origin: 50% 55%;
-      transform: rotate(180deg);
+      ${"" /* transform: rotate(180deg); */}
     `}
 `
 export const SecondaryMenuItem = styled.div`
   /* padding-right: 1.25rem */
+`
+
+export const BarOne = styled.div`
+  width: 35px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+  ${props =>
+    props.change &&
+    css`
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    `}
+`
+
+export const BarTwo = styled.div`
+  width: 35px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+  ${props =>
+    props.change &&
+    css`
+      opacity: 0;
+    `}
+`
+export const BarThree = styled.div`
+  width: 35px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+  ${props =>
+    props.change &&
+    css`
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    `}
 `

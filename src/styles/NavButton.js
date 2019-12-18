@@ -5,13 +5,15 @@ import { navbarHeight } from "../utility/sizes"
 
 const NavButton = styled.button`
   ${resetInput}
+  align-self: flex-end;
+  display: inline-block;
+  cursor: pointer;
   flex: 0 0 auto;
-  min-width: ${rem(navbarHeight)};
+  /* min-width: ${rem(navbarHeight)}; */
   height: ${rem(navbarHeight)};
   color: black;
   text-align: right;
   vertical-align: middle;
-  cursor: pointer;
   ${props =>
     props.active &&
     css`

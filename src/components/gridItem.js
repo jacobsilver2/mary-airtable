@@ -67,6 +67,14 @@ const GridItem = props => {
       }}
     </Motion>
   )
+  // return (
+  //   <div
+  //     onMouseEnter={() => setIsHovering(true)}
+  //     onMouseLeave={() => setIsHovering(false)}
+  //   >
+  //     <Img fluid={fluid} alt={titleify} />
+  //   </div>
+  // )
 }
 
 export default GridItem

@@ -8,7 +8,8 @@ const NavButton = styled.button`
   align-self: flex-end;
   display: inline-block;
   cursor: pointer;
-  flex: 0 0 auto;
+  padding: 0;
+  /* flex: 0 0 auto; */
   /* min-width: ${rem(navbarHeight)}; */
   height: ${rem(navbarHeight)};
   color: black;
@@ -20,5 +21,9 @@ const NavButton = styled.button`
       background: white;
     `}
 `
+
+NavButton.defaultProps = {
+  "data-id": "NavButton",
+}
 
 export default NavButton

@@ -2,11 +2,15 @@ import styled from "styled-components"
 
 const GridContainer = styled.div`
   display: grid;
+  @media screen and (min-width: 1400px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 10px;
   margin: 0 auto;
-  /* max-width: 1620px; */
-  /* padding: 0px 1.0875rem 1.45rem; */
   padding-top: 0;
 `
 

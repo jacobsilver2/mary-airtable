@@ -5,7 +5,7 @@ import WorkContainerComponent from "../components/workContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
 const ProjectTemplate = props => {
-  console.log(props)
+  // console.log(props)
   const { nodes } = props.data.allAirtable
   const hero = nodes.filter(node => node.data.Type === "Hero")[0]
   const title = nodes.filter(node => node.data.Type === "h1")[0].Text

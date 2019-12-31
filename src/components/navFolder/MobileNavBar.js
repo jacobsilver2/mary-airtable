@@ -1,8 +1,7 @@
-import { faChevronDown, faMobile } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import ContextConsumer from "../../contexts/navContext"
+import HamburgerMenu from "react-hamburger-menu"
 import {
   IconWrapper,
   LogoLink,
@@ -35,16 +34,13 @@ const MobileNavBar = () => {
               <h1>{data.site.siteMetadata.title}</h1>
             </LogoLink>
             <Wrapper>
-              <NavButton onClick={() => set({ menuOpen: !menuData.menuOpen })}>
-                {/* <IconWrapper rotate={menuData.menuOpen}>
-                  <FontAwesomeIcon icon={faMobile} />
-                </IconWrapper> */}
-                <BarOne change={menuData.menuOpen} />
-                <BarTwo change={menuData.menuOpen} />
-                <BarThree change={menuData.menuOpen} />
-              </NavButton>
+              <HamburgerMenu
+                isOpen={menuData.menuOpen}
+                menuClicked={() => set({ menuOpen: !menuData.menuOpen })}
+                width={20}
+                height={15}
+              />
             </Wrapper>
-
             <SecondaryMenu open={menuData.menuOpen}>
               <NavLinks />
               <NavSeparator />

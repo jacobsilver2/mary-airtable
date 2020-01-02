@@ -7,7 +7,7 @@ import rem from "../../../utility/rem"
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  height: calc(100vh - ${rem(navbarHeight)});
+  height: calc(100vh - ${rem(navbarHeight + 100)});
   color: #666;
 
   font-size: 8rem;
@@ -20,8 +20,9 @@ const Wrapper = styled.div`
     padding: 0 10%;
   }
 `
-
+//! expiriment with this being a fieldset.  Maybe that'll work? Still don't know why nothing seems to put the ihput and button inside the flex container.
 const StyledForm = styled.form`
+  align-items: center;
   display: flex;
   background: #fff;
   border: 1px solid #ddd;
@@ -63,13 +64,18 @@ const StyledButton = styled.button`
   transition: background-color 0.2s;
   width: 100%;
   ${props =>
-    props.isHovering
+    props.isHovering && !props.isEmpty
       ? css`
           background: #444;
         `
       : css`
           background: black;
         `}
+  ${props =>
+    props.isEmpty &&
+    css`
+      background: #d2d2d2;
+    `}
   border: 0;
   border-radius: 100px;
   float: left;
@@ -100,6 +106,7 @@ const PasswordProtect = () => {
         />
         <StyledButton
           isHovering={isButtonHovered}
+          isEmpty={password.length === 0}
           type="submit"
           onMouseEnter={() => buttonHover(true)}
           onMouseLeave={() => buttonHover(false)}

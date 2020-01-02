@@ -1,32 +1,33 @@
 import React, { useState } from "react"
 import { setSessionPassword } from "../utils/utils"
 import styled, { css } from "styled-components"
+import { navbarHeight } from "../../../utility/sizes"
+import rem from "../../../utility/rem"
 
 const Wrapper = styled.div`
-  height: 100vh;
-  background: white;
-  color: #666;
   display: flex;
   flex-wrap: wrap;
+  height: calc(100vh - ${rem(navbarHeight + 100)});
+  color: #666;
+
   font-size: 8rem;
   max-width: 100%;
   width: 100%;
   align-items: center;
   align-content: center;
   font-weight: 200;
-  min-height: 100vh;
   @media screen and (max-width: 995px) {
     padding: 0 10%;
   }
 `
-
-const Form = styled.form`
+//! expiriment with this being a fieldset.  Maybe that'll work? Still don't know why nothing seems to put the ihput and button inside the flex container.
+const StyledForm = styled.form`
   align-items: center;
+  display: flex;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 26px;
   color: #333;
-  display: flex;
   flex-direction: row;
   font-weight: 400;
   margin: 0 auto;
@@ -38,7 +39,7 @@ const Form = styled.form`
   }
 `
 
-const Input = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   height: 48px;
   border-radius: 26px;
@@ -50,7 +51,7 @@ const Input = styled.input`
   width: 100%;
 `
 
-const Button = styled.button`
+const StyledButton = styled.button`
   position: absolute;
   @media screen and (min-width: 540px) {
     position: inherit;
@@ -63,13 +64,18 @@ const Button = styled.button`
   transition: background-color 0.2s;
   width: 100%;
   ${props =>
-    props.isHovering
+    props.isHovering && !props.isEmpty
       ? css`
           background: #444;
         `
       : css`
           background: black;
         `}
+  ${props =>
+    props.isEmpty &&
+    css`
+      background: #d2d2d2;
+    `}
   border: 0;
   border-radius: 100px;
   float: left;
@@ -90,23 +96,24 @@ const PasswordProtect = () => {
 
   return (
     <Wrapper>
-      <Form onSubmit={onSubmit}>
-        <Input
+      <StyledForm onSubmit={onSubmit}>
+        <StyledInput
           name="password"
           placeholder="Enter Password"
           type="password"
           value={password}
           onChange={event => setPassword(event.target.value)}
         />
-        <Button
+        <StyledButton
           isHovering={isButtonHovered}
+          isEmpty={password.length === 0}
           type="submit"
           onMouseEnter={() => buttonHover(true)}
           onMouseLeave={() => buttonHover(false)}
         >
           ENTER
-        </Button>
-      </Form>
+        </StyledButton>
+      </StyledForm>
     </Wrapper>
   )
 }

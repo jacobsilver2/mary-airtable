@@ -28,14 +28,6 @@ html {
 
 body { 
     font-family: "fertigo_proregular";
-    ${
-      "" /* padding: 0;
-    margin: 0;
-    font-size: 2rem;
-    line-height: 1;
-    margin: 0;
-    letter-spacing: ${rem(0.25)}; */
-    }
    h2 {
     font-family: 'Bitter';
    } 

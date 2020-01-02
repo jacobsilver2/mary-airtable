@@ -11,8 +11,13 @@ import {
 
 const Wrapper = styled.nav`
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex: 0 0 auto;
+  /* flex: 0 0 auto; */
+  font-size: 1.5rem;
+  @media screen and (max-width: 374px) {
+    font-size: 1.1rem;
+  }
 `
 
 const NavLinks = () => {
@@ -53,13 +58,13 @@ const NavLinks = () => {
             <NavSeparator />
 
             <a href="https://www.behance.net/MaryChoueiter">
-              <StyledBehance fill="grey" />
+              <StyledBehance fill="#aaaaaa" />
             </a>
             <a href="https://www.instagram.com/tahhiyakaryoka/">
-              <StyledLinkedIn fill="grey" />
+              <StyledLinkedIn fill="#aaaaaa" />
             </a>
             <a href="https://www.linkedin.com/in/marychoueiter">
-              <StyledInstagram fill="grey" />
+              <StyledInstagram fill="#aaaaaa" />
             </a>
           </Wrapper>
         )

@@ -27,10 +27,11 @@ export const SecondaryMenu = styled.div`
           height: 0;
         `}
   display: flex;
+  opacity: 0.95;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.25rem;
+  padding: 0;
   transition: height 0.1s;
   user-select: none;
   -webkit-overflow-scrolling: touch;
@@ -64,44 +65,4 @@ export const IconWrapper = styled.div`
 `
 export const SecondaryMenuItem = styled.div`
   /* padding-right: 1.25rem */
-`
-
-export const BarOne = styled.div`
-  width: 35px;
-  height: 3px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-  ${props =>
-    props.change &&
-    css`
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-      transform: rotate(-45deg) translate(-9px, 6px);
-    `}
-`
-
-export const BarTwo = styled.div`
-  width: 35px;
-  height: 3px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-  ${props =>
-    props.change &&
-    css`
-      opacity: 0;
-    `}
-`
-export const BarThree = styled.div`
-  width: 35px;
-  height: 3px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-  ${props =>
-    props.change &&
-    css`
-      -webkit-transform: rotate(45deg) translate(-8px, -8px);
-      transform: rotate(45deg) translate(-8px, -8px);
-    `}
 `

@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   left: 0;
   box-sizing: border-box;
   z-index: 3;
-  width: 100%;
+  /* width: 100%; */
   height: ${rem(navbarHeight)};
   background: white;
   transition: background 300ms ease-out;

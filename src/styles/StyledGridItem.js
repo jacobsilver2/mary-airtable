@@ -35,6 +35,10 @@ export const StyledTitle = styled.div`
   position: absolute;
   top: 5%;
   left: 5%;
+  @media screen and (max-width: 375px) {
+    font-size: 2rem;
+    line-height: 25px;
+  }
 `
 
 export const StyledTitleText = styled.div`

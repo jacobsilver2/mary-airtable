@@ -8,6 +8,7 @@ module.exports = {
     description: ``,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     {
       resolve: "@mkitio/gatsby-theme-password-protect",

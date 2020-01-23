@@ -41,7 +41,7 @@ const NavLinks = () => {
               }}
               to="/side-notes"
             >
-              Side-Notes
+              Side Notes
             </NavLink>
 
             <NavSeparator />

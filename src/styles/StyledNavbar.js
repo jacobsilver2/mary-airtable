@@ -31,10 +31,10 @@ export const NormalNavBar = styled.div`
   /* padding: 0 ${rem(20)}; */
 
   ${mobile(
-    css`
+  css`
       display: none;
     `
-  )}
+)}
 `
 
 export const StartWrapper = styled.div`

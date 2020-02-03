@@ -37,7 +37,7 @@ const MobileNavBar = () => {
               <HamburgerMenu
                 isOpen={menuData.menuOpen}
                 menuClicked={() => set({ menuOpen: !menuData.menuOpen })}
-                width={20}
+                width={30}
                 height={15}
               />
             </Wrapper>

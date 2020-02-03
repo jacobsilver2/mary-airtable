@@ -11,6 +11,8 @@ import MobileNavbar from "./MobileNavBar"
 import NavLinks from "./NavLinks"
 import ContextConsumer from "../../contexts/navContext"
 
+
+
 const NavBarComponent = () => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -22,11 +24,14 @@ const NavBarComponent = () => {
     }
   `)
 
+
+
   return (
     <ContextConsumer>
       {({ menuData, set }) => {
         return (
           <Wrapper>
+            <a id="top" />
             <NormalNavBar>
               <StartWrapper>
                 <LogoLink

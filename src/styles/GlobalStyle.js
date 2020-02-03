@@ -27,6 +27,7 @@ html {
 }
 
 body { 
+  margin-top: 0;
     font-family: "fertigo_proregular";
    h2 {
     font-family: 'Bitter';

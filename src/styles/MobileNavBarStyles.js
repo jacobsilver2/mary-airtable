@@ -18,6 +18,7 @@ export const SecondaryMenu = styled.div`
   top: 8rem;
   left: 0;
   right: 0;
+  /* height: 100vh; */
   ${p =>
     p.open
       ? css`

@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
 import Helmet from "react-helmet"
-import WorkContainerComponent from "../components/workContainer"
+import ProjectsContainer from "../components/ProjectsContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
 const ProjectTemplate = props => {
@@ -15,7 +15,7 @@ const ProjectTemplate = props => {
   return (
     <>
       <Helmet title={title} />
-      <WorkContainerComponent hero={hero}>{myhtml}</WorkContainerComponent>
+      <ProjectsContainer hero={hero}>{myhtml}</ProjectsContainer>
     </>
   )
 }

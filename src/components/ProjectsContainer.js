@@ -29,7 +29,7 @@ const renderHero = hero =>
     <StyledHeroImg src={hero[0].publicURL} alt="" />
   )
 
-const workContainer = ({ hero, children }) => {
+const workContainer = ({ location, hero, children }) => {
   return (
     <>
       {hero && (
@@ -52,7 +52,7 @@ const workContainer = ({ hero, children }) => {
       )}
       <main>{children}</main>
       <Link to="/#top">back to top</Link>
-      <Footer />
+      <Footer location={location} />
     </>
   )
 }

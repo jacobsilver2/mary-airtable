@@ -1,14 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import Img from "gatsby-image"
+import useWindowWidth from "../hooks/useWindowWidth"
 
 const FooterContainer = styled.footer`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @media only screen and (min-width: 540px) and (max-width: 767px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 766px) {
+    grid-template-columns: 1fr;
+  }
 `
 
-export default () => {
+export default ({ location }) => {
   const data = useStaticQuery(graphql`
     {
       allAirtable(
@@ -35,11 +44,24 @@ export default () => {
       }
     }
   `)
+
+  const width = useWindowWidth()
+  let numberOfTiles = null
+
+  if (width >= 768) {
+    numberOfTiles = 4
+  } else if (width < 768 && width >= 540) {
+    numberOfTiles = 2
+  } else {
+    numberOfTiles = 1
+  }
+
   const { nodes } = data.allAirtable
-  console.log(nodes)
-  const randoms = data.allAirtable.nodes
+  //get a random selection of nodes, exluding the node you're currently at.
+  const randoms = nodes
+    .filter(node => node.data.Name !== location)
     .sort(() => 0.5 - Math.random())
-    .slice(0, 4)
+    .slice(0, numberOfTiles)
     .map(selection => (
       <Link to={`/${selection.data.Name}`} key={selection.id}>
         <Img

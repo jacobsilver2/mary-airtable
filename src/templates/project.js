@@ -12,10 +12,14 @@ const ProjectTemplate = props => {
     .filter(node => node.data.Type !== "Hero")
     .map(node => renderWorkHtml(node))
 
+  console.log(props)
+
   return (
     <>
       <Helmet title={title} />
-      <ProjectsContainer hero={hero}>{myhtml}</ProjectsContainer>
+      <ProjectsContainer location={props.pageContext.name} hero={hero}>
+        {myhtml}
+      </ProjectsContainer>
     </>
   )
 }

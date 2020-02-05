@@ -22,7 +22,7 @@ export const SecondaryMenu = styled.div`
   ${p =>
     p.open
       ? css`
-          height: 8rem;
+          height: 100vh;
         `
       : css`
           height: 0;

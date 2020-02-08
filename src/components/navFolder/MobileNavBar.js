@@ -3,15 +3,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import ContextConsumer from "../../contexts/navContext"
 import HamburgerMenu from "react-hamburger-menu"
 import {
-  IconWrapper,
   LogoLink,
   SecondaryMenu,
   Wrapper,
-  BarOne,
-  BarTwo,
-  BarThree,
 } from "../../styles/MobileNavBarStyles"
-import NavButton from "../../styles/NavButton"
 import NavSeparator from "../../styles/NavSeparator"
 import NavLinks from "./NavLinks"
 
@@ -28,19 +23,24 @@ const MobileNavBar = () => {
   return (
     <ContextConsumer>
       {({ menuData, set }) => {
+        const { title } = data.site.siteMetadata
         return (
           <Wrapper>
-            <LogoLink onClick={() => set({ menuOpen: false })}>
-              <h1>{data.site.siteMetadata.title}</h1>
+            <LogoLink
+              visible={!menuData.menuOpen}
+              onClick={() => set({ menuOpen: false })}
+            >
+              <h1>{title}</h1>
             </LogoLink>
-            <Wrapper>
-              <HamburgerMenu
-                isOpen={menuData.menuOpen}
-                menuClicked={() => set({ menuOpen: !menuData.menuOpen })}
-                width={30}
-                height={15}
-              />
-            </Wrapper>
+
+            {/* <Wrapper> */}
+            <HamburgerMenu
+              isOpen={menuData.menuOpen}
+              menuClicked={() => set({ menuOpen: !menuData.menuOpen })}
+              width={30}
+              height={15}
+            />
+            {/* </Wrapper> */}
             <SecondaryMenu open={menuData.menuOpen}>
               <NavLinks />
               <NavSeparator />

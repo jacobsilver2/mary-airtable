@@ -28,11 +28,12 @@ export const SecondaryMenu = styled.div`
           height: 0;
         `}
   display: flex;
-  opacity: 0.95;
+  /* opacity: 0.95; */
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   padding: 0;
+
   transition: height 0.1s;
   user-select: none;
   -webkit-overflow-scrolling: touch;
@@ -46,6 +47,11 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
+  ${p =>
+    !p.visible &&
+    css`
+      visibility: hidden;
+    `}
   /* margin-left: 3rem; */
   font-weight: 500;
   font-size: 1.5rem;

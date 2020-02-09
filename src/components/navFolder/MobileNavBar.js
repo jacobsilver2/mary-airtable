@@ -8,6 +8,7 @@ import {
   Wrapper,
 } from "../../styles/MobileNavBarStyles"
 import NavSeparator from "../../styles/NavSeparator"
+import NavLink from "../../styles/NavLink"
 import NavLinks from "./NavLinks"
 
 const MobileNavBar = () => {
@@ -42,8 +43,7 @@ const MobileNavBar = () => {
             />
             {/* </Wrapper> */}
             <SecondaryMenu open={menuData.menuOpen}>
-              <NavLinks />
-              <NavSeparator />
+              <NavLinks isSecondary={true} />
             </SecondaryMenu>
           </Wrapper>
         )

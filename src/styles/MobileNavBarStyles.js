@@ -18,7 +18,6 @@ export const SecondaryMenu = styled.div`
   top: 8rem;
   left: 0;
   right: 0;
-  /* height: 100vh; */
   ${p =>
     p.open
       ? css`
@@ -28,10 +27,11 @@ export const SecondaryMenu = styled.div`
           height: 0;
         `}
   display: flex;
-  /* opacity: 0.95; */
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-direction: column;
+
   padding: 0;
 
   transition: height 0.1s;
@@ -52,7 +52,6 @@ export const LogoLink = styled(Link).attrs({
     css`
       visibility: hidden;
     `}
-  /* margin-left: 3rem; */
   font-weight: 500;
   font-size: 1.5rem;
   display: inline-block;
@@ -67,9 +66,6 @@ export const IconWrapper = styled.div`
     p.rotate &&
     css`
       transform-origin: 50% 55%;
-      ${"" /* transform: rotate(180deg); */}
     `}
 `
-export const SecondaryMenuItem = styled.div`
-  /* padding-right: 1.25rem */
-`
+export const SecondaryMenuItem = styled.div``

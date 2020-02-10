@@ -1,14 +1,10 @@
+import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import React from "react"
-import { Link } from "gatsby"
 import { StyledImageText } from "../styles/StyledHtml"
 import styled from "styled-components"
 import Footer from "./footerComponent"
-
-if (typeof window !== "undefined") {
-  // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]')
-}
+import SideNotesFooter from "./SideNotesFooter"
 
 const StyledHero = styled(Img)`
   display: block;
@@ -29,6 +25,10 @@ const StyledContainer = styled.div`
   }
 `
 
+const StyledHeroContainer = styled.div`
+  margin-bottom: 10rem;
+`
+
 const renderHero = hero =>
   hero[0].childImageSharp ? (
     <StyledHero fluid={hero[0].childImageSharp.fluid} />
@@ -36,11 +36,11 @@ const renderHero = hero =>
     <StyledHeroImg src={hero[0].publicURL} alt="" />
   )
 
-const workContainer = ({ location, hero, children }) => {
+const ProjectsContainer = ({ location, hero, type = "project", children }) => {
   return (
     <StyledContainer>
       {hero && (
-        <>
+        <StyledHeroContainer>
           {hero.data ? (
             renderHero(hero.data.Attachments.localFiles)
           ) : (
@@ -55,12 +55,20 @@ const workContainer = ({ location, hero, children }) => {
               {hero.fields.Text && hero.fields.Text}
             </StyledImageText>
           )}
-        </>
+        </StyledHeroContainer>
       )}
       <main>{children}</main>
-      <Footer location={location} />
+      {type === "project" && <Footer location={location} />}
+      {type === "side-note" && <SideNotesFooter location={location} />}
     </StyledContainer>
   )
 }
 
-export default workContainer
+ProjectsContainer.propTypes = {
+  children: PropTypes.any,
+  hero: PropTypes.any,
+  location: PropTypes.any,
+  type: PropTypes.string,
+}
+
+export default ProjectsContainer

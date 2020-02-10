@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const StyledContainer = styled.div`
   display: table;
@@ -39,6 +39,12 @@ export const StyledTitle = styled.div`
     font-size: 2rem;
     line-height: 25px;
   }
+  ${p =>
+    p.isFooter &&
+    css`
+      font-size: 2rem;
+      line-height: 25px;
+    `}
 `
 
 export const StyledTitleText = styled.div`

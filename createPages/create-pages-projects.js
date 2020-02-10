@@ -14,6 +14,7 @@ function createProjectPages(result, createPage) {
       component: slash(projectPostTemplate),
       context: {
         name: Name,
+        type: "project",
       },
     })
   })

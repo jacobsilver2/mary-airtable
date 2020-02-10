@@ -63,6 +63,22 @@ export const StyledP = styled.p`
     line-height: 20px;
   }
 `
+export const StyledSmallText = styled.p`
+  font-size: 1.5rem;
+  color: #aaaaaa;
+  line-height: 24px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1.3rem;
+    line-height: 20px;
+  }
+
+  @media only screen and (max-width: 540px) {
+    font-size: 1rem;
+    line-height: 16px;
+  }
+`
+
 export const StyledImageText = styled.p`
   font-size: 1.4rem;
   color: #aaaaaa;

@@ -6,6 +6,7 @@ import ProjectsContainer from "../components/ProjectsContainer"
 import { renderWorkHtml } from "../utility/renderHtml"
 
 const ProjectTemplate = props => {
+  const { type } = props.pageContext
   const { nodes } = props.data.allAirtable
   const hero = nodes.filter(node => node.data.Type === "Hero")[0]
   const title = nodes.filter(node => node.data.Type === "h1")[0].Text
@@ -16,7 +17,11 @@ const ProjectTemplate = props => {
   return (
     <>
       <Helmet title={title} />
-      <ProjectsContainer location={props.pageContext.name} hero={hero}>
+      <ProjectsContainer
+        type={type}
+        location={props.pageContext.name}
+        hero={hero}
+      >
         {myhtml}
       </ProjectsContainer>
     </>

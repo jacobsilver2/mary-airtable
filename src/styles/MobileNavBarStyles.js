@@ -6,6 +6,16 @@ import rem from "../utility/rem"
 
 export const Wrapper = styled.div`
   display: none;
+  ${p =>
+    p.secondaryIsOpen
+      ? css`
+          margin-left: 0;
+          margin-right: 0;
+        `
+      : css`
+          margin-left: 30px;
+          margin-right: 30px;
+        `}
   ${mobile(css`
     display: flex;
     align-items: center;
@@ -68,4 +78,12 @@ export const IconWrapper = styled.div`
       transform-origin: 50% 55%;
     `}
 `
+export const HamurgerMenuWrapper = styled.div`
+  ${p =>
+    p.secondaryIsOpen &&
+    css`
+      margin-right: 30px;
+    `}
+`
+
 export const SecondaryMenuItem = styled.div``

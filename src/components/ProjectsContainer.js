@@ -22,6 +22,13 @@ const StyledHeroImg = styled.img`
   width: 100%;
 `
 
+const StyledContainer = styled.div`
+  @media only screen and (min-width: 768px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`
+
 const renderHero = hero =>
   hero[0].childImageSharp ? (
     <StyledHero fluid={hero[0].childImageSharp.fluid} />
@@ -31,7 +38,7 @@ const renderHero = hero =>
 
 const workContainer = ({ location, hero, children }) => {
   return (
-    <>
+    <StyledContainer>
       {hero && (
         <>
           {hero.data ? (
@@ -51,9 +58,8 @@ const workContainer = ({ location, hero, children }) => {
         </>
       )}
       <main>{children}</main>
-      <Link to="/#top">back to top</Link>
       <Footer location={location} />
-    </>
+    </StyledContainer>
   )
 }
 

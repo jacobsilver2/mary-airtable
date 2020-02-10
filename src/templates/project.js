@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import React from "react"
 import Helmet from "react-helmet"
@@ -12,8 +13,6 @@ const ProjectTemplate = props => {
     .filter(node => node.data.Type !== "Hero")
     .map(node => renderWorkHtml(node))
 
-  console.log(props)
-
   return (
     <>
       <Helmet title={title} />
@@ -22,6 +21,11 @@ const ProjectTemplate = props => {
       </ProjectsContainer>
     </>
   )
+}
+
+ProjectTemplate.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object,
 }
 
 export default ProjectTemplate

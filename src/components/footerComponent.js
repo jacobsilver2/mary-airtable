@@ -19,7 +19,7 @@ const FooterContainer = styled.footer`
   }
 `
 
-export default ({ location }) => {
+const FooterComponent = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
       allAirtable(
@@ -95,8 +95,10 @@ export default ({ location }) => {
       </TextWrapper>
       <FooterContainer>{randomTiles}</FooterContainer>
       <h2 style={{ textAlign: "center" }}>
-        <Link to="/">Back To Top</Link>
+        <Link to="/">Back</Link>
       </h2>
     </>
   )
 }
+
+export default FooterComponent

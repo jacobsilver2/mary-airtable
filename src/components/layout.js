@@ -4,11 +4,9 @@ import { GlobalStyle } from "../styles/GlobalStyle"
 import NavComponent from "./navFolder/NavRoot"
 import styled from "styled-components"
 
-
-
 const Wrapper = styled.div`
   /* max-width: 1600px; */
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
 `
 

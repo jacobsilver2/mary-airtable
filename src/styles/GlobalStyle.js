@@ -28,6 +28,10 @@ html {
 
 body { 
   margin-top: 0;
+  @media only screen and (max-width: 1599px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
     font-family: "fertigo_proregular";
    h2 {
     font-family: 'Bitter';

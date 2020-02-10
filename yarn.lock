@@ -5277,6 +5277,11 @@ executable@^4.1.0:
   dependencies:
     pify "^2.2.0"
 
+exenv@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
+
 exif-parser@^0.1.12:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/exif-parser/-/exif-parser-0.1.12.tgz#58a9d2d72c02c1f6f02a0ef4a9166272b7760922"
@@ -11553,6 +11558,13 @@ react-scroll@^1.7.16:
     lodash.throttle "^4.1.1"
     prop-types "^15.5.8"
 
+react-scrolllock@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-scrolllock/-/react-scrolllock-5.0.0.tgz#e383ffc8d2bc372194f9e06a68d04687640b399c"
+  integrity sha512-S5zbJMHU3jVRyOe2VfDU5PD8Lt56k61zgCQ7esnXpEkt3pySqK55k6QLw09qA1+y5yDJZOW7q0s9ha0grPs2WQ==
+  dependencies:
+    exenv "^1.2.2"
+
 react-side-effect@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.2.0.tgz#0e940c78faba0c73b9b0eba9cd3dda8dfb7e7dae"
@@ -12635,6 +12647,11 @@ slugify@^1.3.6:
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.3.6.tgz#ba5fd6159b570fe4811d02ea9b1f4906677638c3"
   integrity sha512-wA9XS475ZmGNlEnYYLPReSfuz/c3VQsEMoU43mi6OnKMCdbnFXd4/Yg7J0lBv8jkPolacMpOrWEaoYxuE1+hoQ==
+
+smooth-scroll@^16.1.2:
+  version "16.1.2"
+  resolved "https://registry.yarnpkg.com/smooth-scroll/-/smooth-scroll-16.1.2.tgz#77e70bdaaee849a6a24420741406a7d99c53b819"
+  integrity sha512-zo/61lPWCxzsjYfxbqr9a94PIFSU840+0e053+n6Hf0RcX8MtjtNXNSInEYRlbGaJ2/nezyEWPywsm3TCya0vQ==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

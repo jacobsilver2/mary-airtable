@@ -3,11 +3,7 @@ import styled, { css } from "styled-components"
 import ContextConsumer from "../../contexts/navContext"
 import NavLink from "../../styles/NavLink"
 import NavSeparator from "../../styles/NavSeparator"
-import {
-  StyledBehance,
-  StyledInstagram,
-  StyledLinkedIn,
-} from "../../styles/StyledNavbar"
+import { Behance, Instagram, LinkedIn } from "../Icon"
 
 const Wrapper = styled.nav`
   display: flex;
@@ -44,26 +40,26 @@ const NavLinks = props => {
   const icons = props.isSecondary ? (
     <IconWrapper>
       <a href="https://www.behance.net/MaryChoueiter">
-        <StyledBehance fill="#aaaaaa" />
+        <Behance size="60" />
       </a>
       <a href="https://www.instagram.com/tahhiyakaryoka/">
-        <StyledLinkedIn fill="#aaaaaa" />
+        <Instagram size="60" />
       </a>
       <a href="https://www.linkedin.com/in/marychoueiter">
-        <StyledInstagram fill="#aaaaaa" />
+        <LinkedIn size="60" />
       </a>
     </IconWrapper>
   ) : (
     <>
       {" "}
       <a href="https://www.behance.net/MaryChoueiter">
-        <StyledBehance fill="#aaaaaa" />
+        <Behance />
       </a>
       <a href="https://www.instagram.com/tahhiyakaryoka/">
-        <StyledLinkedIn fill="#aaaaaa" />
+        <Instagram />
       </a>
       <a href="https://www.linkedin.com/in/marychoueiter">
-        <StyledInstagram fill="#aaaaaa" />
+        <LinkedIn />
       </a>{" "}
     </>
   )

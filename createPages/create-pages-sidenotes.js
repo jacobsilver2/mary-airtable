@@ -13,6 +13,7 @@ function createSidenotesPages(result, createPage) {
       component: slash(projectPostTemplate),
       context: {
         name: node.data.Name,
+        type: "side-note",
       },
     })
   })

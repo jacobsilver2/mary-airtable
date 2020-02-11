@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import ContextConsumer from "../../contexts/navContext"
+import useWindowDimensions from "../../hooks/useWindowDimensions"
 import NavLink from "../../styles/NavLink"
 import NavSeparator from "../../styles/NavSeparator"
 import { Behance, Instagram, LinkedIn } from "../Icon"
@@ -14,7 +15,7 @@ const Wrapper = styled.nav`
     p.isSecondary &&
     css`
       width: 100%;
-      height: calc(100vh - 8rem);
+      height: calc(${p.innerHeight}px * 100);
       flex-direction: column;
       justify-content: flex-start;
       font-size: 2.2rem;
@@ -32,11 +33,13 @@ const IconWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 10vh;
+  height: 30vh;
   border-top: 1px solid #aaaaaa;
 `
 
 const NavLinks = props => {
+  const { height, width } = useWindowDimensions()
+
   const icons = props.isSecondary ? (
     <IconWrapper>
       <a href="https://www.behance.net/MaryChoueiter">
@@ -68,7 +71,7 @@ const NavLinks = props => {
     <ContextConsumer>
       {({ menuData, set }) => {
         return (
-          <Wrapper isSecondary={props.isSecondary}>
+          <Wrapper isSecondary={props.isSecondary} innerHeight={height * 0.01}>
             <NavLink
               onClick={() => {
                 set({ menuOpen: false })

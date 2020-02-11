@@ -23,8 +23,8 @@ const Wrapper = styled.div`
 const useStyles = makeStyles(theme => ({
   root: {
     "& .MuiTextField-root": {
-      margin: theme.spacing(3),
-      width: 500,
+      margin: theme.spacing(2),
+      width: "75%",
     },
   },
   button: {
@@ -107,7 +107,12 @@ const Contact = () => {
           }}
         >
           {({ values, errors, isSubmitting }) => (
-            <Form className={classes.root}>
+            <Form
+              className={classes.root}
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+            >
+              <input type="hidden" name="bot-field" />
               <div>
                 <MyTextField
                   placeholder="Your Name"

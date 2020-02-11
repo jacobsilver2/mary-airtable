@@ -45,7 +45,7 @@ const MobileNavBar = () => {
             </HamurgerMenuWrapper>
             <ScrollLock isActive={menuData.menuOpen}>
               <SecondaryMenu open={menuData.menuOpen}>
-                <NavLinks isSecondary={true} />
+                <NavLinks issecondary={true} />
               </SecondaryMenu>
             </ScrollLock>
           </Wrapper>

@@ -63,6 +63,23 @@ export const StyledP = styled.p`
     line-height: 20px;
   }
 `
+
+export const StyledATag = styled.a`
+  /* text-decoration: none; */
+  &:link {
+    color: #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+  }
+  &:visited {
+    color: #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+  }
+  &:hover {
+    color: red;
+    border-bottom: 1px solid #aaaaaa;
+  }
+`
+
 export const StyledSmallText = styled.p`
   font-size: 1.5rem;
   color: #aaaaaa;

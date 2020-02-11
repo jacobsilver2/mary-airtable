@@ -12,7 +12,7 @@ import {
   StyledTitleText,
 } from "../styles/StyledGridItem"
 
-const GridItem = ({ fluid, title, isProtected, isFooter = false }) => {
+const GridItem = ({ fluid, title, isProtected = false, isFooter = false }) => {
   const titleify = capitalize(title.replace(/[-]+/g, " "))
   const [isHovering, setIsHovering] = useState(false)
   const getSpringProps = () => {
@@ -70,7 +70,7 @@ const GridItem = ({ fluid, title, isProtected, isFooter = false }) => {
 
 GridItem.propTypes = {
   fluid: PropTypes.object.isRequired,
-  isProtected: PropTypes.bool.isRequired,
+  isProtected: PropTypes.bool,
   title: PropTypes.string.isRequired,
   isFooter: PropTypes.bool,
 }

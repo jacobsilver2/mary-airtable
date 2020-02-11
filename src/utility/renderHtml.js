@@ -13,6 +13,7 @@ import {
   TextWrapper,
   ImageWrapper,
   SmallImageWrapper,
+  StyledATag,
 } from "../styles/StyledHtml"
 
 export const renderWorkHtml = node => {
@@ -44,18 +45,18 @@ export const renderWorkHtml = node => {
       )
     case "Paragraph":
       const paragraph = Node.Link ? (
-        <a key={id} href={Node.Link}>
+        <StyledATag key={id} href={Node.Link}>
           <StyledP>{Node.Text}</StyledP>
-        </a>
+        </StyledATag>
       ) : (
         <StyledP key={id}>{Node.Text}</StyledP>
       )
       return <TextWrapper>{paragraph}</TextWrapper>
     case "Small-Text":
       const smallText = Node.Link ? (
-        <a key={id} href={Node.Link}>
+        <StyledATag key={id} href={Node.Link}>
           <StyledSmallText>{Node.Text}</StyledSmallText>
-        </a>
+        </StyledATag>
       ) : (
         <StyledSmallText key={id}>{Node.Text}</StyledSmallText>
       )

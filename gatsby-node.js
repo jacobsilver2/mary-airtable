@@ -2,6 +2,7 @@ const { graphqlForProjects } = require("./createPages/create-pages-projects.js")
 const {
   graphqlForSidenotes,
 } = require("./createPages/create-pages-sidenotes.js")
+const ChildProcess = require("child_process")
 
 async function createIndividualPages(actions, graphql) {
   const { createPage } = actions
@@ -16,4 +17,10 @@ async function createIndividualPages(actions, graphql) {
 
 exports.createPages = ({ graphql, actions }) => {
   return createIndividualPages(actions, graphql)
+}
+
+exports.onPostBuild = () => {
+  ChildProcess.execSync(
+    "ps aux | grep jest | grep -v grep | awk '{print $2}' | xargs kill"
+  )
 }

@@ -8,7 +8,7 @@ const NavLink = styled(Link)`
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
   ${p =>
-    p.isSecondary &&
+    p.issecondary &&
     css`
       /* margin: 3rem 0 3rem 0; */
       margin-top: 5rem;

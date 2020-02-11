@@ -12,7 +12,7 @@ const Wrapper = styled.nav`
   align-items: center;
   font-size: 1.5rem;
   ${p =>
-    p.isSecondary &&
+    p.issecondary &&
     css`
       width: 100%;
       height: calc(${p.innerHeight}px * 100);
@@ -40,7 +40,7 @@ const IconWrapper = styled.div`
 const NavLinks = props => {
   const { height, width } = useWindowDimensions()
 
-  const icons = props.isSecondary ? (
+  const icons = props.issecondary ? (
     <IconWrapper>
       <a href="https://www.behance.net/MaryChoueiter">
         <Behance size="60" />
@@ -71,13 +71,13 @@ const NavLinks = props => {
     <ContextConsumer>
       {({ menuData, set }) => {
         return (
-          <Wrapper isSecondary={props.isSecondary} innerHeight={height * 0.01}>
+          <Wrapper issecondary={props.issecondary} innerHeight={height * 0.01}>
             <NavLink
               onClick={() => {
                 set({ menuOpen: false })
               }}
               to="/"
-              isSecondary={props.isSecondary}
+              issecondary={props.issecondary}
             >
               Work
             </NavLink>
@@ -87,7 +87,7 @@ const NavLinks = props => {
                 set({ menuOpen: false })
               }}
               to="/side-notes"
-              isSecondary={props.isSecondary}
+              issecondary={props.issecondary}
             >
               Side Notes
             </NavLink>
@@ -99,7 +99,7 @@ const NavLinks = props => {
                 set({ menuOpen: false })
               }}
               to="/about"
-              isSecondary={props.isSecondary}
+              issecondary={props.issecondary}
             >
               About
             </NavLink>

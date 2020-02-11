@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const NavSeparator = styled.span`
   flex: 0 0 auto;

@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react"
+// import React, { useState, useEffect } from "react"
 
-const useWindowWidth = () => {
-  const isBrowser = typeof window !== "undefined"
-  const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
+// const useWindowWidth = () => {
+//   const isBrowser = typeof window !== "undefined"
+//   const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
 
-  useEffect(() => {
-    if (!isBrowser) return false
+//   useEffect(() => {
+//     if (!isBrowser) return false
 
-    const handleResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleResize)
+//     const handleResize = () => setWidth(window.innerWidth)
+//     window.addEventListener("resize", handleResize)
 
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  })
+//     return () => {
+//       window.removeEventListener("resize", handleResize)
+//     }
+//   })
 
-  return width
-}
+//   return width
+// }
 
-export default useWindowWidth
+// export default useWindowWidth

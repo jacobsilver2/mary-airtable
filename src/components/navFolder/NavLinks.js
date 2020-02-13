@@ -71,7 +71,7 @@ const NavLinks = props => {
     <ContextConsumer>
       {({ menuData, set }) => {
         return (
-          <Wrapper issecondary={props.issecondary} innerHeight={height}>
+          <Wrapper issecondary={props.issecondary} innerHeight={height * 0.01}>
             <NavLink
               onClick={() => {
                 set({ menuOpen: false })

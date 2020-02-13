@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-// import useWindowWidth from "../hooks/useWindowWidth"
+import useWindowWidth from "../hooks/useWindowWidth"
 import GridItem from "../components/gridItem"
 import { TextWrapper, StyledHTwo } from "../styles/StyledHtml"
 
@@ -48,16 +48,16 @@ const SideNotesFooter = ({ location }) => {
   `)
   const { nodes } = data.allAirtable
   const [randomTiles, setRandomTiles] = useState([])
-  // const width = useWindowWidth()
+  const width = useWindowWidth()
 
-  let numberOfTiles = 4
-  // if (width >= 768) {
-  //   numberOfTiles = 4
-  // } else if (width < 768 && width >= 540) {
-  //   numberOfTiles = 2
-  // } else {
-  //   numberOfTiles = 1
-  // }
+  let numberOfTiles = null
+  if (width >= 768) {
+    numberOfTiles = 4
+  } else if (width < 768 && width >= 540) {
+    numberOfTiles = 2
+  } else {
+    numberOfTiles = 1
+  }
 
   //get a random selection of nodes, exluding the node you're currently at. The random number of tiles will change when it hits different screen
   // resolutions.

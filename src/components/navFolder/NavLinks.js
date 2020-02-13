@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import ContextConsumer from "../../contexts/navContext"
-// import useWindowDimensions from "../../hooks/useWindowDimensions"
+import useWindowDimensions from "../../hooks/useWindowDimensions"
 import NavLink from "../../styles/NavLink"
 import NavSeparator from "../../styles/NavSeparator"
 import { Behance, Instagram, LinkedIn } from "../Icon"
@@ -38,7 +38,7 @@ const IconWrapper = styled.div`
 `
 
 const NavLinks = props => {
-  // const { height, width } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
 
   const icons = props.issecondary ? (
     <IconWrapper>
@@ -71,7 +71,7 @@ const NavLinks = props => {
     <ContextConsumer>
       {({ menuData, set }) => {
         return (
-          <Wrapper issecondary={props.issecondary} innerHeight={1000}>
+          <Wrapper issecondary={props.issecondary} innerHeight={height}>
             <NavLink
               onClick={() => {
                 set({ menuOpen: false })

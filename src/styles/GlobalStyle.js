@@ -1,10 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import * as fonts from "../fonts/fonts"
-import rem from "../utility/rem"
-export const Wrapper = styled.div`
-  /* margin-left: 3rem;
-  margin-right: 3rem; */
-`
 
 export const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -15,7 +10,10 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 
-@import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
+${
+  "" /* @import url('https://fonts.googleapis.com/css?family=Bitter&display=swap'); */
+}
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
 html {
   box-sizing: border-box;
@@ -27,12 +25,20 @@ html {
 }
 
 body { 
-    font-family: "fertigo_proregular";
+  margin-top: 0;
+  @media only screen and (max-width: 1599px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+    ${"" /* font-family: "fertigo_proregular"; */}
+    font-family: 'Rubik', sans-serif;
    h2 {
-    font-family: 'Bitter';
+    ${"" /* font-family: 'Bitter'; */}
+    font-family: 'Rubik', sans-serif;
    } 
    p {
-     font-family: "Bitter";
+     ${"" /* font-family: "Bitter"; */}
+     font-family: 'Rubik', sans-serif;
    }
 }
 `

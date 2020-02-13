@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 export const TextWrapper = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-left: 25vw;
-    margin-right: 17vw;
+    margin-right: 25vw;
   }
 `
 export const ImageWrapper = styled.div`
@@ -63,12 +63,46 @@ export const StyledP = styled.p`
     line-height: 20px;
   }
 `
+
+export const StyledATag = styled.a`
+  /* text-decoration: none; */
+  &:link {
+    color: #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+  }
+  &:visited {
+    color: #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+  }
+  &:hover {
+    color: red;
+    border-bottom: 1px solid #aaaaaa;
+  }
+`
+
+export const StyledSmallText = styled.p`
+  font-size: 1.5rem;
+  color: #aaaaaa;
+  line-height: 24px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1.3rem;
+    line-height: 20px;
+  }
+
+  @media only screen and (max-width: 540px) {
+    font-size: 1rem;
+    line-height: 16px;
+  }
+`
+
 export const StyledImageText = styled.p`
   font-size: 1.4rem;
   color: #aaaaaa;
   line-height: 19px;
-  padding-left: 25%;
-  padding-right: 25%;
+  margin-top: 5px;
+  margin-left: 25vw;
+  margin-right: 25vw;
 
   @media only screen and (max-width: 767px) {
     font-size: 1rem;

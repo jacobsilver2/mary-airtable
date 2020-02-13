@@ -1,36 +1,83 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import ContextConsumer from "../../contexts/navContext"
+import useWindowDimensions from "../../hooks/useWindowDimensions"
 import NavLink from "../../styles/NavLink"
 import NavSeparator from "../../styles/NavSeparator"
-import {
-  StyledBehance,
-  StyledInstagram,
-  StyledLinkedIn,
-} from "../../styles/StyledNavbar"
+import { Behance, Instagram, LinkedIn } from "../Icon"
 
 const Wrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex: 0 0 auto; */
   font-size: 1.5rem;
+  ${p =>
+    p.issecondary &&
+    css`
+      width: 100%;
+      height: calc(${p.innerHeight}px * 100);
+      flex-direction: column;
+      justify-content: flex-start;
+      font-size: 2.2rem;
+      div:last-of-type {
+        margin-top: auto;
+      }
+    `}
   @media screen and (max-width: 374px) {
     font-size: 1.1rem;
   }
 `
 
-const NavLinks = () => {
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30vh;
+  border-top: 1px solid #aaaaaa;
+`
+
+const NavLinks = props => {
+  const { height, width } = useWindowDimensions()
+
+  const icons = props.issecondary ? (
+    <IconWrapper>
+      <a href="https://www.behance.net/MaryChoueiter">
+        <Behance size="60" />
+      </a>
+      <a href="https://www.instagram.com/tahhiyakaryoka/">
+        <Instagram size="60" />
+      </a>
+      <a href="https://www.linkedin.com/in/marychoueiter">
+        <LinkedIn size="60" />
+      </a>
+    </IconWrapper>
+  ) : (
+    <>
+      {" "}
+      <a href="https://www.behance.net/MaryChoueiter">
+        <Behance />
+      </a>
+      <a href="https://www.instagram.com/tahhiyakaryoka/">
+        <Instagram />
+      </a>
+      <a href="https://www.linkedin.com/in/marychoueiter">
+        <LinkedIn />
+      </a>{" "}
+    </>
+  )
+
   return (
     <ContextConsumer>
       {({ menuData, set }) => {
         return (
-          <Wrapper>
+          <Wrapper issecondary={props.issecondary} innerHeight={height * 0.01}>
             <NavLink
               onClick={() => {
                 set({ menuOpen: false })
               }}
               to="/"
+              issecondary={props.issecondary}
             >
               Work
             </NavLink>
@@ -40,8 +87,9 @@ const NavLinks = () => {
                 set({ menuOpen: false })
               }}
               to="/side-notes"
+              issecondary={props.issecondary}
             >
-              Side-Notes
+              Side Notes
             </NavLink>
 
             <NavSeparator />
@@ -51,21 +99,13 @@ const NavLinks = () => {
                 set({ menuOpen: false })
               }}
               to="/about"
+              issecondary={props.issecondary}
             >
               About
             </NavLink>
 
             <NavSeparator />
-
-            <a href="https://www.behance.net/MaryChoueiter">
-              <StyledBehance fill="#aaaaaa" />
-            </a>
-            <a href="https://www.instagram.com/tahhiyakaryoka/">
-              <StyledLinkedIn fill="#aaaaaa" />
-            </a>
-            <a href="https://www.linkedin.com/in/marychoueiter">
-              <StyledInstagram fill="#aaaaaa" />
-            </a>
+            {icons}
           </Wrapper>
         )
       }}

@@ -99,7 +99,7 @@ const PasswordProtect = () => {
       <StyledForm onSubmit={onSubmit}>
         <StyledInput
           name="password"
-          placeholder="Enter Password"
+          placeholder="Submit Password"
           type="password"
           value={password}
           onChange={event => setPassword(event.target.value)}

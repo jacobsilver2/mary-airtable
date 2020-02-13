@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import React, { useState } from "react"
 import { Motion, spring } from "react-motion"
@@ -5,15 +6,13 @@ import { capitalize } from "../utility/capitalize"
 import {
   StyledContainer,
   StyledContainerImage,
-  StyledOverlay,
   StyledPasswordText,
   StyledSubContainer,
   StyledTitle,
   StyledTitleText,
 } from "../styles/StyledGridItem"
 
-const GridItem = props => {
-  const { fluid, title, isProtected } = props
+const GridItem = ({ fluid, title, isProtected = false, isFooter = false }) => {
   const titleify = capitalize(title.replace(/[-]+/g, " "))
   const [isHovering, setIsHovering] = useState(false)
   const getSpringProps = () => {
@@ -50,11 +49,11 @@ const GridItem = props => {
                 <StyledContainerImage>
                   <Img fluid={fluid} style={styleImage} alt={titleify} />
                 </StyledContainerImage>
-                <StyledTitle style={styleTitle}>
+                <StyledTitle isFooter={isFooter} style={styleTitle}>
                   <StyledTitleText>
                     <p dangerouslySetInnerHTML={{ __html: titleify }} />
                     {isProtected && (
-                      <StyledPasswordText>
+                      <StyledPasswordText isFooter={isFooter}>
                         password protected
                       </StyledPasswordText>
                     )}
@@ -67,14 +66,13 @@ const GridItem = props => {
       }}
     </Motion>
   )
-  // return (
-  //   <div
-  //     onMouseEnter={() => setIsHovering(true)}
-  //     onMouseLeave={() => setIsHovering(false)}
-  //   >
-  //     <Img fluid={fluid} alt={titleify} />
-  //   </div>
-  // )
+}
+
+GridItem.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  isProtected: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  isFooter: PropTypes.bool,
 }
 
 export default GridItem

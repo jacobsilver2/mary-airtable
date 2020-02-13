@@ -1,12 +1,8 @@
-import React from "react"
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 import rem from "../utility/rem"
 import { navbarHeight } from "../utility/sizes"
 import { mobile } from "../utility/media"
-import Behance from "../images/behance.svg"
-import Linkedin from "../images/linkedin.svg"
-import Instagram from "../images/instagram.svg"
 
 export const Wrapper = styled.div`
   position: relative;
@@ -25,6 +21,8 @@ export const Wrapper = styled.div`
 
 export const NormalNavBar = styled.div`
   display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 100%;
   justify-content: space-between;
   align-items: center;
@@ -62,38 +60,4 @@ export const LogoLink = styled(Link).attrs({
   vertical-align: middle;
   /* margin-right: ${rem(35)}; */
   color: currentColor;
-`
-
-export const StyledBehance = styled(props => <Behance {...props} />)`
-  display: block;
-  text-align: center;
-  ${"" /* margin: auto 0.5rem; */}
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 0.5rem;
-  :hover {
-    fill: red;
-  }
-`
-
-export const StyledLinkedIn = styled(props => <Linkedin {...props} />)`
-  display: block;
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 0.5rem;
-  :hover {
-    fill: red;
-  }
-`
-
-export const StyledInstagram = styled(props => <Instagram {...props} />)`
-  display: block;
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 0.5rem;
-  :hover {
-    fill: red;
-  }
 `

@@ -6,6 +6,16 @@ import rem from "../utility/rem"
 
 export const Wrapper = styled.div`
   display: none;
+  ${p =>
+    p.secondaryIsOpen
+      ? css`
+          margin-left: 0;
+          margin-right: 0;
+        `
+      : css`
+          margin-left: 30px;
+          margin-right: 30px;
+        `}
   ${mobile(css`
     display: flex;
     align-items: center;
@@ -21,17 +31,19 @@ export const SecondaryMenu = styled.div`
   ${p =>
     p.open
       ? css`
-          height: 8rem;
+          height: 100vh;
         `
       : css`
           height: 0;
         `}
   display: flex;
-  opacity: 0.95;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-direction: column;
+
   padding: 0;
+
   transition: height 0.1s;
   user-select: none;
   -webkit-overflow-scrolling: touch;
@@ -45,7 +57,11 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
-  /* margin-left: 3rem; */
+  ${p =>
+    !p.visible &&
+    css`
+      visibility: hidden;
+    `}
   font-weight: 500;
   font-size: 1.5rem;
   display: inline-block;
@@ -60,9 +76,14 @@ export const IconWrapper = styled.div`
     p.rotate &&
     css`
       transform-origin: 50% 55%;
-      ${"" /* transform: rotate(180deg); */}
     `}
 `
-export const SecondaryMenuItem = styled.div`
-  /* padding-right: 1.25rem */
+export const HamurgerMenuWrapper = styled.div`
+  ${p =>
+    p.secondaryIsOpen &&
+    css`
+      margin-right: 30px;
+    `}
 `
+
+export const SecondaryMenuItem = styled.div``

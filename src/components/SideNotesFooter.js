@@ -19,11 +19,11 @@ const FooterContainer = styled.footer`
   }
 `
 
-const FooterComponent = ({ location, type }) => {
+const SideNotesFooter = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
       allAirtable(
-        filter: { table: { eq: "WorkHome" } }
+        filter: { table: { eq: "SideNotesHome" } }
         sort: { fields: data___Order }
       ) {
         nodes {
@@ -68,14 +68,7 @@ const FooterComponent = ({ location, type }) => {
       .sort(() => 0.5 - Math.random())
       .slice(0, numberOfTiles)
       .map(selection => (
-        <Link
-          key={selection.id}
-          to={
-            selection.data.passwordProtected
-              ? `/${selection.data.Name}/`
-              : `${selection.data.Name}`
-          }
-        >
+        <Link key={selection.id} to={`side-notes/${selection.data.Name}/`}>
           <GridItem
             isProtected={selection.data.passwordProtected}
             title={selection.data.Name}
@@ -92,7 +85,7 @@ const FooterComponent = ({ location, type }) => {
   return (
     <>
       <TextWrapper>
-        <StyledHTwo style={{ marginTop: "15rem" }}>More Work</StyledHTwo>
+        <StyledHTwo style={{ marginTop: "15rem" }}>More Side Notes</StyledHTwo>
       </TextWrapper>
       <FooterContainer>{randomTiles}</FooterContainer>
       <h2 style={{ textAlign: "center" }}>
@@ -102,9 +95,8 @@ const FooterComponent = ({ location, type }) => {
   )
 }
 
-FooterComponent.propTypes = {
+SideNotesFooter.propTypes = {
   location: PropTypes.object,
-  type: PropTypes.string.isRequired,
 }
 
-export default FooterComponent
+export default SideNotesFooter

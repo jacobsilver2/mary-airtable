@@ -5,6 +5,7 @@ import {
   StyledHOne,
   StyledHTwo,
   StyledP,
+  StyledSmallText,
   StyledImage,
   StyledImageText,
   StyledVideoContainer,
@@ -12,6 +13,7 @@ import {
   TextWrapper,
   ImageWrapper,
   SmallImageWrapper,
+  StyledATag,
 } from "../styles/StyledHtml"
 
 export const renderWorkHtml = node => {
@@ -37,19 +39,28 @@ export const renderWorkHtml = node => {
       )
     case "h2":
       return (
-        <TextWrapper>
-          <StyledHTwo key={id}>{Node.Text}</StyledHTwo>
+        <TextWrapper key={id}>
+          <StyledHTwo>{Node.Text}</StyledHTwo>
         </TextWrapper>
       )
     case "Paragraph":
       const paragraph = Node.Link ? (
-        <a style={{ textDecoration: "none" }} key={id} href={Node.Link}>
+        <StyledATag key={id} href={Node.Link}>
           <StyledP>{Node.Text}</StyledP>
-        </a>
+        </StyledATag>
       ) : (
         <StyledP key={id}>{Node.Text}</StyledP>
       )
       return <TextWrapper>{paragraph}</TextWrapper>
+    case "Small-Text":
+      const smallText = Node.Link ? (
+        <StyledATag key={id} href={Node.Link}>
+          <StyledSmallText>{Node.Text}</StyledSmallText>
+        </StyledATag>
+      ) : (
+        <StyledSmallText key={id}>{Node.Text}</StyledSmallText>
+      )
+      return <TextWrapper>{smallText}</TextWrapper>
     case "Image":
       const image = Node.Attachments.localFiles ? (
         <StyledImage

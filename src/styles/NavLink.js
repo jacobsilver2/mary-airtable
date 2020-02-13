@@ -7,6 +7,12 @@ const NavLink = styled(Link)`
   line-height: 3.125rem;
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
+  ${p =>
+    p.issecondary &&
+    css`
+      /* margin: 3rem 0 3rem 0; */
+      margin-top: 5rem;
+    `}
   ${props =>
     props.active
       ? css`

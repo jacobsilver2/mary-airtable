@@ -2,17 +2,15 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import ContextConsumer from "../../contexts/navContext"
 import HamburgerMenu from "react-hamburger-menu"
+import ScrollLock from "react-scrolllock"
 import {
-  IconWrapper,
   LogoLink,
   SecondaryMenu,
   Wrapper,
-  BarOne,
-  BarTwo,
-  BarThree,
+  HamurgerMenuWrapper,
 } from "../../styles/MobileNavBarStyles"
-import NavButton from "../../styles/NavButton"
 import NavSeparator from "../../styles/NavSeparator"
+import NavLink from "../../styles/NavLink"
 import NavLinks from "./NavLinks"
 
 const MobileNavBar = () => {
@@ -28,23 +26,28 @@ const MobileNavBar = () => {
   return (
     <ContextConsumer>
       {({ menuData, set }) => {
+        const { title } = data.site.siteMetadata
         return (
-          <Wrapper>
-            <LogoLink onClick={() => set({ menuOpen: false })}>
-              <h1>{data.site.siteMetadata.title}</h1>
+          <Wrapper secondaryIsOpen={menuData.menuOpen}>
+            <LogoLink
+              visible={!menuData.menuOpen}
+              onClick={() => set({ menuOpen: false })}
+            >
+              <h1>{title}</h1>
             </LogoLink>
-            <Wrapper>
+            <HamurgerMenuWrapper secondaryIsOpen={menuData.menuOpen}>
               <HamburgerMenu
                 isOpen={menuData.menuOpen}
                 menuClicked={() => set({ menuOpen: !menuData.menuOpen })}
-                width={20}
+                width={30}
                 height={15}
               />
-            </Wrapper>
-            <SecondaryMenu open={menuData.menuOpen}>
-              <NavLinks />
-              <NavSeparator />
-            </SecondaryMenu>
+            </HamurgerMenuWrapper>
+            <ScrollLock isActive={menuData.menuOpen}>
+              <SecondaryMenu open={menuData.menuOpen}>
+                <NavLinks issecondary={true} />
+              </SecondaryMenu>
+            </ScrollLock>
           </Wrapper>
         )
       }}

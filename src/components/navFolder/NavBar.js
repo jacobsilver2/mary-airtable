@@ -42,6 +42,7 @@ const NavBarComponent = () => {
                 <NavLinks />
               </EndWrapper>
             </NormalNavBar>
+
             <MobileNavbar />
           </Wrapper>
         )

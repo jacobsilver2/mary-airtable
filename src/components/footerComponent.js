@@ -50,7 +50,7 @@ const FooterComponent = ({ location, type }) => {
   const [randomTiles, setRandomTiles] = useState([])
   const width = useWindowWidth()
 
-  let numberOfTiles = null
+  let numberOfTiles = 4
   if (width >= 768) {
     numberOfTiles = 4
   } else if (width < 768 && width >= 540) {

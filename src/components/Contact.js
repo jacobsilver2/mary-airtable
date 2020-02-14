@@ -1,9 +1,15 @@
 import React, { useState } from "react"
 import { Formik, Field, Form, useField } from "formik"
+import Airtable from "airtable"
+import { navigate } from "gatsby"
 import { TextField, Button } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import styled from "styled-components"
 import * as yup from "yup"
+
+const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
+  "appNleNEvC86qLO29"
+)
 
 const StyledFormWrapper = styled.div`
   padding-top: 20px;
@@ -91,6 +97,18 @@ const validationSchema = yup.object({
     .required(),
 })
 
+const handleSubmit = data => {
+  // console.log(data)
+  base("submissions").create(data),
+    function(err, record) {
+      if (err) {
+        console.log(err)
+        return
+      }
+    }
+  navigate("/thanks")
+}
+
 const Contact = () => {
   const classes = useStyles()
   return (
@@ -103,6 +121,7 @@ const Contact = () => {
             setSubmitting(true)
             // make async call
             console.log(data)
+            handleSubmit(data)
             setSubmitting(false)
           }}
         >

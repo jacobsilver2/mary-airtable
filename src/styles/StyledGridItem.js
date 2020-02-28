@@ -8,7 +8,11 @@ export const StyledContainer = styled.div`
 
 export const StyledSubContainer = styled.div`
   position: relative;
-  background-color: #2f3238;
+  ${p =>
+    p.isHovering &&
+    css`
+      background-color: rgba(0, 0, 0, 0.9);
+    `}
   overflow: hidden;
 `
 

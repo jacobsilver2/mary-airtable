@@ -26,7 +26,7 @@ const GridItem = ({ fluid, title, isProtected = false, isFooter = false }) => {
       style: {
         scale: spring(isHovering ? 1 : 1),
         marginTop: spring(isHovering ? 22 : 25),
-        imageOpacity: spring(isHovering ? 0.4 : 0.7),
+        imageOpacity: spring(isHovering ? 0.4 : 1),
         opacity: spring(isHovering ? 1 : 0),
       },
     }
@@ -45,7 +45,7 @@ const GridItem = ({ fluid, title, isProtected = false, isFooter = false }) => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <StyledContainer>
-              <StyledSubContainer>
+              <StyledSubContainer isHovering={isHovering ? "true" : "false"}>
                 <StyledContainerImage>
                   <Img fluid={fluid} style={styleImage} alt={titleify} />
                 </StyledContainerImage>

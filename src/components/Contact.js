@@ -1,30 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import { Formik, Field, Form, useField } from "formik"
 import Airtable from "airtable"
 import { navigate } from "gatsby"
 import { TextField, Button } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import styled from "styled-components"
+import { StyledFormWrapper, Wrapper } from "../styles/FormStyles"
 import * as yup from "yup"
 
 const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
   "appNleNEvC86qLO29"
 )
-
-const StyledFormWrapper = styled.div`
-  padding-top: 20px;
-  width: 100%;
-  max-width: 800px;
-  font-size: 2rem;
-  line-height: 2.8rem;
-  margin: 0 auto;
-  color: #999999;
-`
-
-const Wrapper = styled.div`
-  display: block;
-  text-align: center;
-`
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -80,6 +65,7 @@ const MyTextField = ({ placeholder, label, ...props }) => {
     />
   )
 }
+
 const validationSchema = yup.object({
   name: yup
     .string()
@@ -98,7 +84,6 @@ const validationSchema = yup.object({
 })
 
 const handleSubmit = data => {
-  // console.log(data)
   base("submissions").create(data),
     function(err, record) {
       if (err) {
@@ -119,8 +104,6 @@ const Contact = () => {
           validationSchema={validationSchema}
           onSubmit={(data, { setSubmitting }) => {
             setSubmitting(true)
-            // make async call
-            console.log(data)
             handleSubmit(data)
             setSubmitting(false)
           }}
@@ -161,7 +144,6 @@ const Contact = () => {
                   className={classes.button}
                   variant="contained"
                   size="large"
-                  // style={{ backgroundColor: "black", color: "white" }}
                   disabled={isSubmitting}
                   type="submit"
                 >

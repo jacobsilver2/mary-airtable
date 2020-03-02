@@ -1,6 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import Iframe from "react-iframe"
+import Video from "../components/video"
 import {
   StyledHOne,
   StyledHTwo,
@@ -21,6 +22,7 @@ export const renderWorkHtml = node => {
   //? graphQl queries come in as node.data. Protected-route-axios queries come in as node.fields
   //? The next line casts either form into Node
   const Node = data ? data : fields
+  console.log(Node)
   // const type = fields ? fields.Type : data.Type
   switch (Node.Type) {
     //? Hero images are rendered in a parent component, so this case will not be used.
@@ -111,13 +113,8 @@ export const renderWorkHtml = node => {
       )
     case "Video":
       return (
-        <StyledVideoContainer key={id}>
-          <Iframe
-            title={Node.Name}
-            url={Node.Link}
-            width="100%"
-            height="100%"
-          />
+        <StyledVideoContainer>
+          <Video key={id} videoSrcURL={Node.Link} videoTitle={Node.Name} />
         </StyledVideoContainer>
       )
     default:

@@ -8,6 +8,8 @@ export const TextWrapper = styled.div`
   }
 `
 export const ImageWrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
 `
 
@@ -119,13 +121,13 @@ export const StyledSmallImage = styled(Img)`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 40%;
-  min-width: 30%;
+  max-width: 150px;
+  /* min-width: 30%; */
 `
 
 export const StyledVideoContainer = styled.div`
-  position: relative;
   text-align: center;
+  /* position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
   height: 0;
@@ -136,5 +138,7 @@ export const StyledVideoContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-  }
+    width: 100%;
+    height: 100%;
+  } */
 `

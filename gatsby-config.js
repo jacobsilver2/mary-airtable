@@ -163,6 +163,11 @@ module.exports = {
             tableName: `city-debates-publication`,
             mapping: { Attachments: `fileNode` },
           },
+          {
+            baseId: `appGvNaH7D0N8pqLR`,
+            tableName: `ya-razeel-bus`,
+            mapping: { Attachments: `fileNode` },
+          },
         ],
       },
     },

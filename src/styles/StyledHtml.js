@@ -117,6 +117,14 @@ export const StyledImage = styled(Img)`
   /* margin-bottom: 2rem; */
 `
 
+export const StyledIframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+
 export const StyledSmallImage = styled(Img)`
   display: block;
   margin-left: auto;
@@ -126,19 +134,18 @@ export const StyledSmallImage = styled(Img)`
 `
 
 export const StyledVideoContainer = styled.div`
-  text-align: center;
-  /* position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
   height: 0;
-  overflow: hidden;
-  iframe,
-  object,
-  embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  } */
+`
+
+export const VideoGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
 `

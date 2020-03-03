@@ -15,6 +15,7 @@ import {
   ImageWrapper,
   SmallImageWrapper,
   StyledATag,
+  VideoGrid,
 } from "../styles/StyledHtml"
 
 export const renderWorkHtml = node => {
@@ -22,7 +23,6 @@ export const renderWorkHtml = node => {
   //? graphQl queries come in as node.data. Protected-route-axios queries come in as node.fields
   //? The next line casts either form into Node
   const Node = data ? data : fields
-  console.log(Node)
   // const type = fields ? fields.Type : data.Type
   switch (Node.Type) {
     //? Hero images are rendered in a parent component, so this case will not be used.
@@ -113,9 +113,13 @@ export const renderWorkHtml = node => {
       )
     case "Video":
       return (
-        <StyledVideoContainer>
-          <Video key={id} videoSrcURL={Node.Link} videoTitle={Node.Name} />
-        </StyledVideoContainer>
+        <VideoGrid>
+          <div></div>
+          <StyledVideoContainer>
+            <Video key={id} videoSrcURL={Node.Link} videoTitle={Node.Name} />
+          </StyledVideoContainer>
+          <div></div>
+        </VideoGrid>
       )
     default:
       return <div></div>

@@ -100,16 +100,17 @@ export const renderWorkHtml = node => {
       )
     case "gif":
       return (
-        <img
-          style={{ width: "100%" }}
-          key={id}
-          src={
-            Node.Attachments.localFiles
-              ? Node.Attachments.localFiles[0].publicURL
-              : Node.Attachments[0].url
-          }
-          alt=""
-        />
+        <ImageWrapper key={id}>
+          <img
+            style={{ width: "100%" }}
+            src={
+              Node.Attachments.localFiles
+                ? Node.Attachments.localFiles[0].publicURL
+                : Node.Attachments[0].url
+            }
+            alt=""
+          />
+        </ImageWrapper>
       )
     case "Video":
       return (

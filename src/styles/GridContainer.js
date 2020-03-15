@@ -9,7 +9,7 @@ const GridContainer = styled.div`
     grid-template-columns: 1fr;
   }
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 8px;
   margin: 0 auto;
   padding-top: 0;
 `

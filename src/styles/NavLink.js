@@ -2,11 +2,15 @@ import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 
 const NavLink = styled(Link)`
-  /* flex: 0 0 auto; */
-  /* display: inline-block; */
+  @import url("https://fonts.googleapis.com/css2?family=Eczar&display=swap");
+  font-family: Eczar;
+  font-style: normal;
+  font-weight: normal;
   line-height: 3.125rem;
   transition: opacity 0.2s, transform 0.2s;
+  font-size: 13px;
   cursor: pointer;
+
   ${p =>
     p.issecondary &&
     css`
@@ -16,16 +20,18 @@ const NavLink = styled(Link)`
   ${props =>
     props.active
       ? css`
-          color: red;
+          color: #000000;
         `
       : css`
-          color: #aaaaaa;
+          color: #858585;
         `}
+        
   &:hover,
   &:focus {
     opacity: 0.8s;
     color: red;
   }
+
   &:active {
     transform: scale(0.95);
     opacity: 0.6;

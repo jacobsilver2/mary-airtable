@@ -53,11 +53,18 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
+  @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+  font-family: 'Rubik Mono One', sans-serif;
   /* margin-left: 3rem; */
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: .06em;
   display: inline-block;
   vertical-align: middle;
   /* margin-right: ${rem(35)}; */
-  color: currentColor;
+  color: #000000;
+  :hover {
+    color: #FF0000;
+  }
 `

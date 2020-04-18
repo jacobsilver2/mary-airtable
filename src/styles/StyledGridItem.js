@@ -27,10 +27,12 @@ export const StyledPasswordText = styled.div`
 
 export const StyledTitle = styled.div`
   text-align: left;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 500;
   float: left;
   width: 80%;
-  line-height: 38px;
+  line-height: 48px;
+  letter-spacing: 0.01em;
   padding-left: 0%;
   padding-right: 0%;
   padding-bottom: 100px;
@@ -54,7 +56,6 @@ export const StyledTitle = styled.div`
 export const StyledTitleText = styled.div`
   position: relative;
   font-style: normal;
-  font-weight: 400;
 `
 
 export const StyledOverlay = styled.div`

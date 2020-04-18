@@ -6,9 +6,15 @@ export const TextContainer = styled.div`
 `
 
 export const TextWrapper = styled.div`
+  margin-left: 15vw;
+  margin-right: 15vw;
   @media only screen and (min-width: 1200px) {
     margin-left: 25vw;
     margin-right: 25vw;
+  }
+  @media only screen and (max-width: 540px) {
+    margin-left: 10vw;
+    margin-right: 10vw;
   }
 `
 export const ImageWrapper = styled.div`
@@ -23,7 +29,7 @@ export const SmallImageWrapper = styled.div`
 `
 
 export const StyledHOne = styled.h1`
-  font-size: 6rem;
+  font-size: 6.6rem;
   font-weight: 600;
   line-height: 6rem;
   letter-spacing: 0.02em;
@@ -114,10 +120,14 @@ export const StyledSmallText = styled.p`
 `
 
 export const StyledImageText = styled.p`
-  font-size: 1.4rem;
-  color: #aaaaaa;
-  line-height: 19px;
-  margin-top: 5px;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 10px;
+  letter-spacing: 0.01em;
+  color: #999999;
+  margin-top: 1.1rem;
   margin-left: 25vw;
   margin-right: 25vw;
 

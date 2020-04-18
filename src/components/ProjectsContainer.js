@@ -26,7 +26,7 @@ const StyledContainer = styled.div`
 `
 
 const StyledHeroContainer = styled.div`
-  margin-bottom: 10rem;
+  margin-bottom: 10.06rem;
 `
 
 const renderHero = hero =>

@@ -6,9 +6,9 @@ const NavLink = styled(Link)`
   font-family: Eczar;
   font-style: normal;
   font-weight: normal;
-  line-height: 3.125rem;
+  line-height: 1.4rem;
   transition: opacity 0.2s, transform 0.2s;
-  font-size: 13px;
+  font-size: 1.5rem;
   cursor: pointer;
 
   ${p =>
@@ -26,16 +26,18 @@ const NavLink = styled(Link)`
           color: #858585;
         `}
         
-  &:hover,
+  &:hover {
+    color: #ff0000;
+  }
   &:focus {
     opacity: 0.8s;
-    color: red;
+    /* color: red; */
   }
 
   &:active {
     transform: scale(0.95);
     opacity: 0.6;
-    color: red;
+    /* color: #000000; */
   }
 `
 export default NavLink

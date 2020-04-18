@@ -10,7 +10,8 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   z-index: 3;
   /* width: 100%; */
-  height: ${rem(navbarHeight)};
+  /* height: ${rem(navbarHeight)}; */
+  height: 10rem;
   background: white;
   transition: background 300ms ease-out;
   color: black;
@@ -57,7 +58,7 @@ export const LogoLink = styled(Link).attrs({
   font-family: 'Rubik Mono One', sans-serif;
   /* margin-left: 3rem; */
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8rem;
   letter-spacing: .06em;
   display: inline-block;

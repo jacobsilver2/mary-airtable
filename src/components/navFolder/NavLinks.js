@@ -74,20 +74,22 @@ const NavLinks = props => {
           <Wrapper issecondary={props.issecondary} innerHeight={height * 0.01}>
             <NavLink
               onClick={() => {
-                set({ menuOpen: false })
+                set({ menuOpen: false, active: "/" })
               }}
               to="/"
               issecondary={props.issecondary}
+              active={menuData.active === "/"}
             >
               Work
             </NavLink>
             <NavSeparator />
             <NavLink
               onClick={() => {
-                set({ menuOpen: false })
+                set({ menuOpen: false, active: "/side-notes" })
               }}
               to="/side-notes"
               issecondary={props.issecondary}
+              active={menuData.active === "/side-notes"}
             >
               Side Notes
             </NavLink>
@@ -96,10 +98,11 @@ const NavLinks = props => {
 
             <NavLink
               onClick={() => {
-                set({ menuOpen: false })
+                set({ menuOpen: false, active: "/about" })
               }}
               to="/about"
               issecondary={props.issecondary}
+              active={menuData.active === "/about"}
             >
               About
             </NavLink>

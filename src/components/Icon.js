@@ -13,8 +13,11 @@ const StyledSvg = styled.svg`
   }
 `
 
+//default size is 24, but in mobile view they're gonna be way
+// bigger. That comes through props.
+
 const Icon = ({ size = "24", children }) => (
-  <StyledSvg width={size} height={size} viewBox="0 0 26 24">
+  <StyledSvg width={size} height={size} viewBox="0 0 26 28">
     {children}
   </StyledSvg>
 )

@@ -30,10 +30,9 @@ export const SmallImageWrapper = styled.div`
 
 export const StyledHOne = styled.h1`
   font-size: 6.6rem;
-  font-weight: 600;
-  line-height: 6rem;
   letter-spacing: 0.02em;
   line-height: 70px;
+  margin-bottom: 2.9rem;
 
   @media only screen and (max-width: 768px) {
     font-size: 4rem;
@@ -52,6 +51,7 @@ export const StyledHTwo = styled.h2`
   font-weight: normal;
   line-height: 34px;
   letter-spacing: 0.01em;
+  margin-bottom: 1.2rem;
 
   @media only screen and (max-width: 767px) {
     font-size: 1.9rem;

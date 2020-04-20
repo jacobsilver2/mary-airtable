@@ -42,3 +42,4 @@
     - NavLinks.js
     - After that, NavLink.js
     - Logo is in NavBar.js, but the style is in StyledNavBar.js
+    - Mobile navbar styles are in MobileNavBarStyles.js

@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 } */
 @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 html {
   box-sizing: border-box;

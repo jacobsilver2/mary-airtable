@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import rem from "../utility/rem"
 import { navbarHeight } from "../utility/sizes"
 import { mobile } from "../utility/media"
-
 export const Wrapper = styled.div`
+
   position: relative;
   left: 0;
   box-sizing: border-box;
@@ -54,13 +54,12 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
-  @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
   font-family: 'Rubik Mono One', sans-serif;
   /* margin-left: 3rem; */
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.8rem;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   display: inline-block;
   vertical-align: middle;
   /* margin-right: ${rem(35)}; */

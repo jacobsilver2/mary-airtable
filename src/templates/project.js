@@ -17,7 +17,8 @@ const ProjectTemplate = props => {
         node.data.Type !== "Hero" &&
         node.data.Type !== "Image" &&
         node.data.Type !== "gif" &&
-        node.data.Type !== "Video"
+        node.data.Type !== "Video" &&
+        node.data.Type !== "Small-Image"
     )
     .map(node => renderWorkHtml(node))
 

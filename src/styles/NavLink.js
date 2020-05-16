@@ -15,7 +15,9 @@ const NavLink = styled(Link)`
     p.issecondary &&
     css`
       /* margin: 3rem 0 3rem 0; */
-      margin-top: 5rem;
+      /* margin-top: 5rem; */
+      /* margin-bottom: 3rem; */
+      font-size: 3.5rem;
     `}
   ${props =>
     props.active

@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 const GridContainer = styled.div`
   display: grid;
+  margin: 0 auto;
   @media screen and (min-width: 1400px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -10,7 +11,6 @@ const GridContainer = styled.div`
   }
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 8px;
-  margin: 0 auto;
   padding-top: 0;
 `
 

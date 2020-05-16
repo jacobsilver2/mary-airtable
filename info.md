@@ -1,3 +1,7 @@
+# Commands
+
+    - To serve dev build on local network, gatsby develop -H 0.0.0.0
+
 # Layout
 
     - Using a plugin called gatsby-plugin-layout.  I was having some issues with context (I think) that this plugin solved. It propogates the layout file as (definined in gatsby.js) all over the whole project.
@@ -42,4 +46,4 @@
     - NavLinks.js
     - After that, NavLink.js
     - Logo is in NavBar.js, but the style is in StyledNavBar.js
-    - Mobile navbar styles are in MobileNavBarStyles.js
+    - Mobile navbar styles are in MobileNavBarStyles.js, including the Logo styling (this should be refactored)

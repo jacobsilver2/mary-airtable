@@ -69,7 +69,7 @@ export const LogoLink = styled(Link).attrs({
     `}
   font-family: 'Rubik Mono One', sans-serif;
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.8rem;
   letter-spacing: 0.06em;
   display: inline-block;

@@ -27,6 +27,9 @@ const StyledContainer = styled.div`
 
 const StyledHeroContainer = styled.div`
   margin-bottom: 10.06rem;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 6rem;
+  }
 `
 
 const renderHero = hero =>

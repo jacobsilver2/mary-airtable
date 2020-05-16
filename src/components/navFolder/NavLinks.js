@@ -28,13 +28,28 @@ const Wrapper = styled.nav`
   }
 `
 
+const TextWrapper = styled.div`
+  ${p =>
+    p.issecondary &&
+    css`
+      height: 100%;
+      /* margin: auto 0; */
+      /* margin: 0; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    `}
+`
+
 const IconWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 30vh;
   border-top: 1px solid #aaaaaa;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 40vh;
+  padding-top: 15%;
 `
 
 const NavLinks = props => {
@@ -43,13 +58,13 @@ const NavLinks = props => {
   const icons = props.issecondary ? (
     <IconWrapper>
       <a href="https://www.behance.net/MaryChoueiter">
-        <Behance size="60" />
+        <Behance size="40" />
       </a>
       <a href="https://www.instagram.com/tahhiyakaryoka/">
-        <Instagram size="60" />
+        <Instagram size="40" />
       </a>
       <a href="https://www.linkedin.com/in/marychoueiter">
-        <LinkedIn size="60" />
+        <LinkedIn size="40" />
       </a>
     </IconWrapper>
   ) : (
@@ -72,42 +87,44 @@ const NavLinks = props => {
       {({ menuData, set }) => {
         return (
           <Wrapper issecondary={props.issecondary} innerHeight={height * 0.01}>
-            <NavLink
-              onClick={() => {
-                set({ menuOpen: false, active: "/" })
-              }}
-              to="/"
-              issecondary={props.issecondary}
-              active={menuData.active === "/"}
-            >
-              Work
-            </NavLink>
-            <NavSeparator />
-            <NavLink
-              onClick={() => {
-                set({ menuOpen: false, active: "/side-notes" })
-              }}
-              to="/side-notes"
-              issecondary={props.issecondary}
-              active={menuData.active === "/side-notes"}
-            >
-              Side Notes
-            </NavLink>
+            <TextWrapper issecondary={props.issecondary}>
+              <NavLink
+                onClick={() => {
+                  set({ menuOpen: false, active: "/" })
+                }}
+                to="/"
+                issecondary={props.issecondary}
+                active={menuData.active === "/"}
+              >
+                Work
+              </NavLink>
+              <NavSeparator />
+              <NavLink
+                onClick={() => {
+                  set({ menuOpen: false, active: "/side-notes" })
+                }}
+                to="/side-notes"
+                issecondary={props.issecondary}
+                active={menuData.active === "/side-notes"}
+              >
+                Side Notes
+              </NavLink>
 
-            <NavSeparator />
+              <NavSeparator />
 
-            <NavLink
-              onClick={() => {
-                set({ menuOpen: false, active: "/about" })
-              }}
-              to="/about"
-              issecondary={props.issecondary}
-              active={menuData.active === "/about"}
-            >
-              About
-            </NavLink>
+              <NavLink
+                onClick={() => {
+                  set({ menuOpen: false, active: "/about" })
+                }}
+                to="/about"
+                issecondary={props.issecondary}
+                active={menuData.active === "/about"}
+              >
+                About
+              </NavLink>
 
-            <NavSeparator />
+              <NavSeparator />
+            </TextWrapper>
             {icons}
           </Wrapper>
         )

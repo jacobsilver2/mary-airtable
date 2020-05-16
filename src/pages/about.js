@@ -11,6 +11,10 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
 `
 
 const TextWrapper = styled.div`

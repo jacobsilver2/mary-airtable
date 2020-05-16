@@ -3,6 +3,9 @@ import Img from "gatsby-image"
 
 export const TextContainer = styled.div`
   margin-bottom: 141px;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
 `
 
 export const TextWrapper = styled.div`
@@ -13,8 +16,8 @@ export const TextWrapper = styled.div`
     margin-right: 25vw;
   }
   @media only screen and (max-width: 540px) {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
   }
 `
 export const ImageWrapper = styled.div`
@@ -32,16 +35,18 @@ export const StyledHOne = styled.h1`
   font-size: 6.6rem;
   letter-spacing: 0.02em;
   line-height: 70px;
-  margin-bottom: 2.9rem;
+  margin-bottom: 2.7rem;
 
   @media only screen and (max-width: 768px) {
     font-size: 4rem;
     line-height: 39px;
+    /* margin-bottom: 2rem; */
   }
 
   @media only screen and (max-width: 540px) {
     font-size: 3.2rem;
-    line-height: 32px;
+    font-size: 4.16rem;
+    line-height: 42px;
   }
 `
 
@@ -58,7 +63,7 @@ export const StyledHTwo = styled.h2`
     line-height: 25px;
   }
   @media only screen and (max-width: 540px) {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     line-height: 21px;
   }
 `
@@ -109,12 +114,13 @@ export const StyledSmallText = styled.p`
   color: #999999;
 
   @media only screen and (max-width: 767px) {
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
+    font-size: 1.4rem;
     line-height: 20px;
   }
 
   @media only screen and (max-width: 540px) {
-    font-size: 1rem;
+    /* font-size: 1.4rem; */
     line-height: 16px;
   }
 `
@@ -132,8 +138,11 @@ export const StyledImageText = styled.p`
   margin-right: 25vw;
 
   @media only screen and (max-width: 767px) {
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 15px;
+    margin-top: 0.825rem;
+    margin-left: 6vw;
+    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
   }

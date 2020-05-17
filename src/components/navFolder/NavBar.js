@@ -31,7 +31,7 @@ const NavBarComponent = () => {
               <StartWrapper>
                 <LogoLink
                   onClick={() => {
-                    set({ menuOpen: false })
+                    set({ menuOpen: false, active: "/" })
                     navigate("/")
                   }}
                 >

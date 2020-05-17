@@ -2,19 +2,15 @@ import { createGlobalStyle } from "styled-components"
 import * as fonts from "../fonts/fonts"
 
 export const GlobalStyle = createGlobalStyle`
-@font-face {
+/* @font-face {
     font-family: 'fertigo_proregular';
     src: url('${fonts.fertigoProRegular}') format('woff2');
     font-weight: normal;
     font-style: normal;
-
-}
-
-${
-  "" /* @import url('https://fonts.googleapis.com/css?family=Bitter&display=swap'); */
-}
+} */
 @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 html {
   box-sizing: border-box;
@@ -31,14 +27,11 @@ body {
     margin-right: 0;
     margin-left: 0;
   }
-    ${"" /* font-family: "fertigo_proregular"; */}
     font-family: 'Eczar', serif;
    h2 {
-    ${"" /* font-family: 'Bitter'; */}
     font-family: 'Eczar', serif;
    } 
    p {
-     ${"" /* font-family: "Bitter"; */}
      font-family: 'Eczar', serif;
    }
 }

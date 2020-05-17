@@ -24,7 +24,7 @@ module.exports = {
         partialMatching: false,
         pagePaths: [
           "/moody-gardens-aquarium/",
-          "/melab-gallery-in-the-phillip-and-patricia-frost-museum/",
+          "/melab-gallery-frost-museum/",
           "/canadian-museum-for-human-rights/",
         ],
         password: process.env.GATSBY_THEME_PASSWORD_PROTECT_PASSWORD,
@@ -69,7 +69,7 @@ module.exports = {
           },
           {
             baseId: `appYkA3RznpP4TcUq`,
-            tableName: `melab-gallery-in-the-phillip-and-patricia-frost-museum`,
+            tableName: `melab-gallery-frost-museum`,
             mapping: { Attachments: `fileNode` },
           },
           {

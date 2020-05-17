@@ -2,7 +2,7 @@ notes.md
 
 # Mobile
 
-    - [] fix password protections
+    - [x] fix password protections
     - [x] get rid of margins for mobile
     - [x] mobile nav links are too small,
     - [x] space out mobile nav links more
@@ -14,16 +14,16 @@ notes.md
     - [x] H1 should be 1.3x
     - [x] lift h1 higher .25 more than it is
     - [x] look into small image distance
-    - [] Style back like more work, text decoration none, color black with thick red underline
-    - [] make the total height of the back container 2.5x
+    - [x] Style back like more work, text decoration none, color black with thick red underline
+    - [x] make the total height of the back container 2.5x
 
 # About Page
 
     ## Desktop
-    - [] Everything should be an equal width (based on the image)
-    - [] make placeholder text larger
+    - [x] Everything should be an equal width (based on the image)
+    - [x] make placeholder text larger
 
     ## Mobile
-    - [] Mobile text margins should be same as on projects page
-    - [] same with the form width
+    - [x] Mobile text margins should be same as on projects page
+    - [x] same with the form width
     -

@@ -5,6 +5,7 @@ import styled from "styled-components"
 import useWindowWidth from "../hooks/useWindowWidth"
 import GridItem from "../components/gridItem"
 import { TextWrapper, StyledHTwo } from "../styles/StyledHtml"
+import { BackWrapper, BackText } from "./footerComponent"
 
 const FooterContainer = styled.footer`
   display: grid;
@@ -88,9 +89,11 @@ const SideNotesFooter = ({ location }) => {
         <StyledHTwo style={{ marginTop: "15rem" }}>More Side Notes</StyledHTwo>
       </TextWrapper>
       <FooterContainer>{randomTiles}</FooterContainer>
-      <h2 style={{ textAlign: "center" }}>
-        <Link to="/">Back</Link>
-      </h2>
+      <BackWrapper>
+        <StyledHTwo style={{ textAlign: "center" }}>
+          <BackText to="/">Back</BackText>
+        </StyledHTwo>
+      </BackWrapper>
     </>
   )
 }

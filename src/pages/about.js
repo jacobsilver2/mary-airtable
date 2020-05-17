@@ -6,21 +6,23 @@ import styled from "styled-components"
 import Contact from "../components/Contact"
 
 const Wrapper = styled.div`
-  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
 `
 const ImageWrapper = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
     margin: 0 auto;
-  }
+  } */
 `
 
 const TextWrapper = styled.div`
   padding-top: 20px;
-  width: 95%;
-  max-width: 800px;
+  /* width: 95%; */
+  /* max-width: 800px; */
   font-size: 2rem;
   line-height: 2.8rem;
   margin: 0 auto;
@@ -36,12 +38,10 @@ const About = ({ data }) => {
     <>
       <Wrapper>
         <ImageWrapper>
-          <div></div>
           <Img
             // style={{ maxWidth: "627px" }}
             fluid={data.file.childImageSharp.fluid}
           />
-          <div></div>
         </ImageWrapper>
         <TextWrapper>
           <p>

@@ -19,6 +19,25 @@ const FooterContainer = styled.footer`
   }
 `
 
+export const BackWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+`
+
+export const BackText = styled(Link)`
+  color: black;
+  text-decoration: none;
+  /* font-style: italic; */
+  display: inline-block;
+  border-bottom: 2px solid red;
+  padding-bottom: 0;
+  line-height: 70%;
+  &:visited {
+    color: black;
+  }
+`
+
 const FooterComponent = ({ location, type }) => {
   const data = useStaticQuery(graphql`
     {
@@ -95,9 +114,11 @@ const FooterComponent = ({ location, type }) => {
         <StyledHTwo style={{ marginTop: "15rem" }}>More Work</StyledHTwo>
       </TextWrapper>
       <FooterContainer>{randomTiles}</FooterContainer>
-      <h2 style={{ textAlign: "center" }}>
-        <Link to="/">Back</Link>
-      </h2>
+      <BackWrapper>
+        <StyledHTwo>
+          <BackText to="/">Back</BackText>
+        </StyledHTwo>
+      </BackWrapper>
     </>
   )
 }

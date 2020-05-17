@@ -4,23 +4,28 @@ import { navbarHeight } from "../utility/sizes"
 import { mobile } from "../utility/media"
 import rem from "../utility/rem"
 
+// this is not used because mobilenavbar is already wrapped inside a Wrapper component
+// in NavBar.js
 export const Wrapper = styled.div`
   display: none;
+  /* @media only screen and (min-width: 768px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  } */
+  margin-left: 10px;
+  margin-right: 20px;
   ${p =>
-    p.secondaryIsOpen
-      ? css`
-          margin-left: 0;
-          margin-right: 0;
-        `
-      : css`
-          margin-left: 30px;
-          margin-right: 30px;
-        `}
+    p.secondaryIsOpen &&
+    css`
+      margin-left: 0;
+      margin-right: 0;
+    `}
+
   ${mobile(css`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: ${rem(navbarHeight)};
+    height: 10rem;
   `)}
 `
 export const SecondaryMenu = styled.div`
@@ -62,11 +67,17 @@ export const LogoLink = styled(Link).attrs({
     css`
       visibility: hidden;
     `}
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.06em;
   display: inline-block;
   vertical-align: middle;
-  color: currentColor;
+  color: #000000;
+  :hover {
+    color: #ff0000;
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -82,7 +93,7 @@ export const HamurgerMenuWrapper = styled.div`
   ${p =>
     p.secondaryIsOpen &&
     css`
-      margin-right: 30px;
+      margin-right: 20px;
     `}
 `
 

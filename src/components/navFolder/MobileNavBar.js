@@ -9,8 +9,6 @@ import {
   Wrapper,
   HamurgerMenuWrapper,
 } from "../../styles/MobileNavBarStyles"
-import NavSeparator from "../../styles/NavSeparator"
-import NavLink from "../../styles/NavLink"
 import NavLinks from "./NavLinks"
 
 const MobileNavBar = () => {

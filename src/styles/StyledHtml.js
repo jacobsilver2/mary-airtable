@@ -1,10 +1,23 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 
+export const TextContainer = styled.div`
+  margin-bottom: 141px;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
+`
+
 export const TextWrapper = styled.div`
+  margin-left: 15vw;
+  margin-right: 15vw;
   @media only screen and (min-width: 1200px) {
     margin-left: 25vw;
     margin-right: 25vw;
+  }
+  @media only screen and (max-width: 540px) {
+    margin-left: 6vw;
+    margin-right: 6vw;
   }
 `
 export const ImageWrapper = styled.div`
@@ -19,41 +32,50 @@ export const SmallImageWrapper = styled.div`
 `
 
 export const StyledHOne = styled.h1`
-  font-size: 6rem;
-  font-weight: 400;
+  font-size: 6.6rem;
+  letter-spacing: 0.02em;
   line-height: 70px;
+  margin-bottom: 2.7rem;
 
   @media only screen and (max-width: 768px) {
     font-size: 4rem;
     line-height: 39px;
+    /* margin-bottom: 2rem; */
   }
 
   @media only screen and (max-width: 540px) {
     font-size: 3.2rem;
-    line-height: 32px;
+    font-size: 4.16rem;
+    line-height: 42px;
   }
 `
 
 export const StyledHTwo = styled.h2`
   font-size: 2.6rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 34px;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.2rem;
 
   @media only screen and (max-width: 767px) {
     font-size: 1.9rem;
     line-height: 25px;
   }
   @media only screen and (max-width: 540px) {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     line-height: 21px;
   }
 `
 
 export const StyledP = styled.p`
-  font-size: 2rem;
-  color: #aaaaaa;
-  line-height: 28px;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  color: #999999;
+  line-height: 24px;
+  letter-spacing: 0.01em;
 
   @media only screen and (max-width: 767px) {
     font-size: 1.7rem;
@@ -83,32 +105,44 @@ export const StyledATag = styled.a`
 `
 
 export const StyledSmallText = styled.p`
-  font-size: 1.5rem;
-  color: #aaaaaa;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
   line-height: 24px;
+  color: #999999;
 
   @media only screen and (max-width: 767px) {
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
+    font-size: 1.4rem;
     line-height: 20px;
   }
 
   @media only screen and (max-width: 540px) {
-    font-size: 1rem;
+    /* font-size: 1.4rem; */
     line-height: 16px;
   }
 `
 
 export const StyledImageText = styled.p`
-  font-size: 1.4rem;
-  color: #aaaaaa;
-  line-height: 19px;
-  margin-top: 5px;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 10px;
+  letter-spacing: 0.01em;
+  color: #999999;
+  margin-top: 1.1rem;
   margin-left: 25vw;
   margin-right: 25vw;
 
   @media only screen and (max-width: 767px) {
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 15px;
+    margin-top: 0.825rem;
+    margin-left: 6vw;
+    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
   }

@@ -4,6 +4,7 @@ const defaultContextValue = {
   menuData: {
     // set your initial data shape here
     menuOpen: false,
+    active: "/",
   },
   set: () => {},
 }

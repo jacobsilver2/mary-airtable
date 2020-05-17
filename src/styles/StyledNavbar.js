@@ -3,14 +3,15 @@ import { Link } from "gatsby"
 import rem from "../utility/rem"
 import { navbarHeight } from "../utility/sizes"
 import { mobile } from "../utility/media"
-
 export const Wrapper = styled.div`
+
   position: relative;
   left: 0;
   box-sizing: border-box;
   z-index: 3;
   /* width: 100%; */
-  height: ${rem(navbarHeight)};
+  /* height: ${rem(navbarHeight)}; */
+  height: 10rem;
   background: white;
   transition: background 300ms ease-out;
   color: black;
@@ -53,11 +54,17 @@ export const LogoLink = styled(Link).attrs({
   to: "/",
   "aria-label": "home",
 })`
+  font-family: 'Rubik Mono One', sans-serif;
   /* margin-left: 3rem; */
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.06em;
   display: inline-block;
   vertical-align: middle;
   /* margin-right: ${rem(35)}; */
-  color: currentColor;
+  color: #000000;
+  :hover {
+    color: #FF0000;
+  }
 `

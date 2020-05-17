@@ -22,23 +22,28 @@ export const StyledContainerImage = styled.div`
 `
 
 export const StyledPasswordText = styled.div`
-  font-size: 1.3rem;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
 `
 
 export const StyledTitle = styled.div`
   text-align: left;
-  font-size: 3rem;
+  font-size: 4.8rem;
+  font-weight: 500;
   float: left;
   width: 80%;
-  line-height: 38px;
+  line-height: 5rem;
+  letter-spacing: 0.01em;
   padding-left: 0%;
   padding-right: 0%;
   padding-bottom: 100px;
   padding-top: 0px;
   color: white;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 3%;
+  left: 7%;
   @media screen and (max-width: 375px) {
     font-size: 2rem;
     line-height: 25px;
@@ -54,7 +59,6 @@ export const StyledTitle = styled.div`
 export const StyledTitleText = styled.div`
   position: relative;
   font-style: normal;
-  font-weight: 400;
 `
 
 export const StyledOverlay = styled.div`

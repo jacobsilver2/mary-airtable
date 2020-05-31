@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { animateScroll as scroll } from "react-scroll"
 import styled from "styled-components"
 import useWindowWidth from "../hooks/useWindowWidth"
 import GridItem from "../components/gridItem"
@@ -17,6 +18,10 @@ const FooterContainer = styled.footer`
   @media only screen and (max-width: 539px) {
     grid-template-columns: 1fr;
   }
+`
+
+export const BackToTop = styled(StyledHTwo)`
+  cursor: pointer;
 `
 
 export const BackWrapper = styled.div`
@@ -115,9 +120,10 @@ const FooterComponent = ({ location, type }) => {
       </TextWrapper>
       <FooterContainer>{randomTiles}</FooterContainer>
       <BackWrapper>
-        <StyledHTwo>
-          <BackText to="/">Back</BackText>
-        </StyledHTwo>
+        <BackToTop onClick={() => scroll.scrollToTop()}>
+          {/* <BackText to="/">Back</BackText> */}
+          Back To Top
+        </BackToTop>
       </BackWrapper>
     </>
   )

@@ -1,11 +1,12 @@
 import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { animateScroll as scroll } from "react-scroll"
 import styled from "styled-components"
 import useWindowWidth from "../hooks/useWindowWidth"
 import GridItem from "../components/gridItem"
 import { TextWrapper, StyledHTwo } from "../styles/StyledHtml"
-import { BackWrapper, BackText } from "./footerComponent"
+import { BackWrapper, BackText, BackToTop } from "./footerComponent"
 
 const FooterContainer = styled.footer`
   display: grid;
@@ -90,9 +91,10 @@ const SideNotesFooter = ({ location }) => {
       </TextWrapper>
       <FooterContainer>{randomTiles}</FooterContainer>
       <BackWrapper>
-        <StyledHTwo style={{ textAlign: "center" }}>
-          <BackText to="/">Back</BackText>
-        </StyledHTwo>
+        <BackToTop onClick={() => scroll.scrollToTop()}>
+          {/* <BackText to="/">Back</BackText> */}
+          Back To Top
+        </BackToTop>
       </BackWrapper>
     </>
   )

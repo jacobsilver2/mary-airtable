@@ -6,7 +6,7 @@ import styled from "styled-components"
 import Contact from "../components/Contact"
 
 const Wrapper = styled.div`
-  max-width: 1000px;
+  max-width: 750px;
   margin: 0 auto;
   padding: 2rem;
 `

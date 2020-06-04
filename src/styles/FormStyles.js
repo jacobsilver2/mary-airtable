@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const StyledFormWrapper = styled.div`
   padding-top: 20px;
   width: 100%;
-  max-width: 800px;
+  max-width: 750px;
   font-size: 2rem;
   line-height: 2.8rem;
   margin: 0 auto;
